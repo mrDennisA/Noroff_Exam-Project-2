@@ -1,0 +1,28 @@
+.icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  /* margin: 12px; */
+}
+
+/* ARROW */
+.arrow {
+  fill: var(--pink);
+}
+
+/* BAR OPEN */
+.bar-open {
+  display: block;
+}
+
+.bar-open rect {
+  fill: var(--pink);
+}
+
+/* BAR CLOSED */
+.bar-closed .st0 {
+  fill: none;
+  stroke: var(--pink);
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}

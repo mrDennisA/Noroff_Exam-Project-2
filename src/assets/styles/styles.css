@@ -1,0 +1,87 @@
+@import "./common/typography.css";
+@import "./common/color.css";
+@import "./common/icons.css";
+
+:root {
+  --radius: 4px;
+  --cWidth: 1200px;
+  --timer: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+
+  border: unset;
+  outline: unset;
+  background: unset;
+}
+
+/* Hide Scroll Bar */
+* {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--cWidth);
+}
+
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.bgC25 {
+  margin-top: 2rem;
+  background-color: var(--warmGray1C25);
+}
+
+.bgC50 {
+  background-color: var(--warmGray1C50);
+  padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
