@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Madera";
+  src: url("/src/assets/font/Madera-W01-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
