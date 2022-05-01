@@ -18,10 +18,7 @@
   border: unset;
   outline: unset;
   background: unset;
-}
 
-/* Hide Scroll Bar */
-* {
   /* IE and Edge */
   -ms-overflow-style: none;
   /* Firefox */
