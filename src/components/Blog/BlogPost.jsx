@@ -10,7 +10,10 @@ import { useFetch } from "../../hooks/useFetch";
 
 // Components
 import Heading from "../Heading";
-// import ResponsiveImage from "../ResponsiveImage";
+import ScrollToTop from "../Buttons/ScrollToTop";
+
+// Styles
+import { Section } from "./BlogPost.styled";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -24,18 +27,44 @@ export default function BlogPost() {
   }
 
   if (!loading) {
-    // console.log(data.data.attributes);
+    // console.log(data.data);
     const title = data.data.attributes.title;
-    // const cover = data.data.attributes.cover.data.attributes.formats;
     const desciption = data.data.attributes.description;
     const richText = data.data.attributes.richText;
+
+    const ReactMarkdownComponents = {
+      p: ({ node, children }) => {
+        if (node.children[0].tagName === "img") {
+          return (
+            <div>
+              <div>
+                <img src={node.children[0].properties.src} alt={node.children[0].properties.alt} />
+              </div>
+              {node.children[2] && (
+                <div>
+                  <img src={node.children[2].properties.src} alt={node.children[2].properties.alt} />
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        // Return default child if it's not an image
+        return <p>{children}</p>;
+      },
+    };
+
     return (
-      <>
-        <Heading>{title}</Heading>
-        {/* <ResponsiveImage data={cover} /> */}
-        <p>{desciption}</p>
-        <ReactMarkdown>{richText}</ReactMarkdown>
-      </>
+      <div className="container blog">
+        <div className="wrapper">
+          <Section>
+            <Heading>{title}</Heading>
+            <strong>{desciption}</strong>
+            <ReactMarkdown components={ReactMarkdownComponents}>{richText}</ReactMarkdown>
+          </Section>
+          <ScrollToTop />
+        </div>
+      </div>
     );
   }
 }
