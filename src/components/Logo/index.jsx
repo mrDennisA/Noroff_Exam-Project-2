@@ -1,5 +1,5 @@
 // Styles
-import { Link, Img } from "./Index.styled";
+import { Link, Img } from "./index.styled";
 
 export default function Logo({ data }) {
   // console.log(data);

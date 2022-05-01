@@ -2,24 +2,24 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Layout Components
-import Header from "./layout/Header/Header";
-import Main from "./layout/Main/Main";
-import Footer from "./layout/Footer/Footer";
+import Header from "./layout/Header";
+import Main from "./layout/Main";
+import Footer from "./layout/Footer";
 
 // Header Components
 import MenuHeader from "./components/Menu/MenuHeader";
 
 // Pages Components
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import BlogPost from "./components/Blog/BlogPost";
-import HairExtenstions from "./pages/HairExtenstions/HairExtenstions";
-import CareCollection from "./pages/CareCollection/CareCollection";
+import HairExtenstions from "./pages/HairExtenstions";
+import CareCollection from "./pages/CareCollection";
 import Detail from "./pages/CareCollection/Detail";
-import PartnerSalons from "./pages/PartnerSalons/PartnerSalons";
+import PartnerSalons from "./pages/PartnerSalons";
 import BecomeVokeSalon from "./pages/BecomeVokeSalon";
-import About from "./pages/About/About";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
-import FAQ from "./pages/FAQ/FAQ";
+import FAQ from "./pages/FAQ";
 
 //  Footer Components
 import MenuFooter from "./components/Menu/MenuFooter";

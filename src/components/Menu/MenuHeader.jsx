@@ -24,8 +24,12 @@ export default function MenuHeader({ isOpen, toggle }) {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
+  if (error) {
+    console.log(error);
+  }
+
   if (!loading) {
-    const logo = "http://localhost:1337" + data.data.attributes.logo.data.attributes.url;
+    const logo = data.data.attributes.logo.data.attributes.url;
     const links = data.data.attributes.link;
 
     // Toggle Active Link

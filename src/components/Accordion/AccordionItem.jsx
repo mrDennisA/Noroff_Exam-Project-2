@@ -16,12 +16,13 @@ export default function AccordionItem({ data }) {
 
   function handleChange() {
     setIsActive(!isActive);
+
     setDimensions(contentHeight.current.scrollHeight + 16);
 
     window.addEventListener("resize", () => {
       setDimensions(null);
       setTimeout(() => {
-        setDimensions(contentHeight.current.scrollHeight);
+        setDimensions(contentHeight.current.scrollHeight + 16);
       }, 20);
     });
   }
@@ -34,7 +35,7 @@ export default function AccordionItem({ data }) {
         </Heading>
         <div className={isActive ? "active" : ""}>{ARROW_ICON}</div>
       </Title>
-      <Content ref={contentHeight} isActive={isActive} height={isActive ? dimensions : "0"}>
+      <Content ref={contentHeight} isActive={isActive} height={isActive ? dimensions : 0}>
         {content}
       </Content>
     </div>

@@ -11,7 +11,7 @@ import Accordion from "../../components/Accordion";
 import Heading from "../../components/Heading";
 import ScrollToTop from "../../components/Buttons/ScrollToTop";
 
-import { Container } from "./FAQ.styled";
+import { Container } from "./index.styled";
 
 const url = FAQ_PAGE_URL + POPULATE_URL;
 

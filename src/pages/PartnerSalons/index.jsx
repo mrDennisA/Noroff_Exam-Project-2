@@ -9,9 +9,9 @@ import { useFetch } from "../../hooks/useFetch";
 // Components
 import Heading from "../../components/Heading";
 import ScrollToTop from "../../components/Buttons/ScrollToTop";
-import { TableContainer, TableHead, TableBody } from "../../components/Table/Table";
+import { TableContainer, TableHead, TableBody } from "../../components/Table";
 
-import { Container, TableGrid } from "./PartnerSalons.styled";
+import { Container, TableGrid } from "./index.styled";
 
 const url = PARTNER_SALONS_PAGE_URL + "?populate=table.countries.partnerSalons";
 

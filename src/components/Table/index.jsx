@@ -1,4 +1,4 @@
-import { Table, Thead, Tbody, Tr, Th, Td } from "./Table.styled";
+import { Table, Thead, Tbody, Tr, Th, Td } from "./index.styled";
 
 export function TableContainer({ children }) {
   return <Table>{children}</Table>;

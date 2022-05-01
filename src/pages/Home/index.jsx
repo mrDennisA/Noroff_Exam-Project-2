@@ -10,7 +10,7 @@ import { useFetch } from "../../hooks/useFetch";
 import Wrapper from "../../layout/Wrapper";
 
 // Components
-import HeroBanner from "../../components/HeroBanner/HeroBanner";
+import HeroBanner from "../../components/HeroBanner";
 import Article from "../../components/Article/Article";
 import BlogList from "../../components/Blog/BlogList";
 import ScrollToTop from "../../components/Buttons/ScrollToTop";

@@ -1,5 +1,5 @@
 // Styles
-import { Container } from "./Header.styled";
+import { Container } from "./index.styled";
 
 export default function Header({ children }) {
   return <Container>{children}</Container>;

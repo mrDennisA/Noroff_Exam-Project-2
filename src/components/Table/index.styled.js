@@ -20,8 +20,18 @@ export const Thead = styled.thead`
 `;
 
 export const Tbody = styled.tbody`
+  display: grid;
+
+  tr {
+    border-bottom: 1px solid var(--warmGray1C50);
+    padding: 12px 0;
+    @media only screen and (min-width: 768px) {
+      padding: unset;
+    }
+  }
+
   :last-child {
-    td {
+    tr {
       border-bottom: unset;
     }
   }
@@ -65,16 +75,15 @@ export const Th = styled.th`
 export const Td = styled.td`
   font-size: 1rem;
   font-weight: 300;
-  line-height: 32px;
+
   padding: 0 8px;
 
   :last-child {
     border-right: unset;
-    border-bottom: 1px solid var(--warmGray1C50);
   }
 
   @media only screen and (min-width: 768px) {
+    line-height: 48px;
     border-right: 1px solid var(--warmGray1C50);
-    border-bottom: 1px solid var(--warmGray1C50);
   }
 `;
