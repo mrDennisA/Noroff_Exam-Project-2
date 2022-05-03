@@ -6,6 +6,11 @@ export const Form = styled.form`
   max-width: 400px;
   gap: 2rem;
 
+  fieldset {
+    display: grid;
+    gap: 2rem;
+  }
+
   &.register {
     @media only screen and (min-width: 576px) {
       max-width: 600px;

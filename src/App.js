@@ -7,6 +7,7 @@ import Main from "./layout/Main";
 import Footer from "./layout/Footer";
 
 // Header Components
+import AdminMenu from "./components/Menu/AdminMenu";
 import MenuHeader from "./components/Menu/MenuHeader";
 
 // Pages Components
@@ -21,14 +22,21 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 
+// Admin Pages Components
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
+
 //  Footer Components
 import MenuFooter from "./components/Menu/MenuFooter";
 
+// Hooks
+import { AuthProvider } from "./services/AuthContext";
+
+// Styles
 import { Modal } from "./App.styled";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
   const bodyContainer = document.querySelector("body");
 
   const toggle = () => {
@@ -46,9 +54,10 @@ function App() {
   };
 
   return (
-    <>
+    <AuthProvider>
       <Modal isOpen={isOpen} onClick={toggle} />
       <div>
+        <AdminMenu />
         <Header>
           <MenuHeader isOpen={isOpen} toggle={toggle} />
         </Header>
@@ -64,13 +73,16 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faq" element={<FAQ />} />
+
+            <Route path="login" element={<Login />} />
+            <Route path="admin" element={<Admin />} />
           </Routes>
         </Main>
       </div>
       <Footer>
         <MenuFooter />
       </Footer>
-    </>
+    </AuthProvider>
   );
 }
 

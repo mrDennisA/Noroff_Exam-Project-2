@@ -19,6 +19,10 @@ export default function HairExtenstionsList() {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
+  if (error) {
+    console.log(error);
+  }
+
   if (!loading) {
     const ombre = data.data.filter((item) => item.attributes.filter.data.attributes.slug === "ombre");
     const blonde = data.data.filter((item) => item.attributes.filter.data.attributes.slug === "blonde");

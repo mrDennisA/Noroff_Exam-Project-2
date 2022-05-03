@@ -32,6 +32,10 @@ export default function Home() {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
   if (error) {
     console.log(error);
   }

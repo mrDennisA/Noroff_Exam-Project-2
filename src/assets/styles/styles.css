@@ -78,6 +78,10 @@ img {
   padding-bottom: 2rem;
 }
 
+.bgDarkBrown {
+  background-color: var(--darkBrown);
+}
+
 @media only screen and (min-width: 576px) {
   .wrapper {
     padding: 0 1rem;

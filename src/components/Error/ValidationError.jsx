@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const Message = styled.div`
+const Message = styled.span`
   margin-top: 4px;
   color: red;
   font-size: 16px;
