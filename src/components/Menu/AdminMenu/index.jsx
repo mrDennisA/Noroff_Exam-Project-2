@@ -16,11 +16,11 @@ export default function AdminMenu() {
     navigate("/", { replace: true });
   }
   // console.log(auth);
-  useEffect(() => {
-    if (auth === null) {
-      navigate("/", { replace: true });
-    }
-  });
+  // useEffect(() => {
+  //   if (auth === null) {
+  //     navigate("/", { replace: true });
+  //   }
+  // });
 
   return (
     <div className="bgDarkBrown">
