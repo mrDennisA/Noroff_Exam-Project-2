@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   display: flex;
+  max-width: 300px;
+
+  @media only screen and (min-width: 576px) {
+    max-width: unset;
+  }
 
   & > div,
   a {
@@ -12,6 +17,11 @@ export const Card = styled.div`
     overflow: hidden;
     border-radius: var(--radius);
     box-shadow: 0 4px 8px var(--shadow);
+  }
+
+  img {
+    max-height: 400px;
+    object-fit: contain;
   }
 
   h4 {
@@ -48,7 +58,7 @@ export const Info = styled.div`
     display: grid;
     grid-template-rows: 1fr auto;
     gap: 0.5rem;
-    padding: 2rem;
+    padding: 1rem;
     height: 100%;
   }
 `;
@@ -56,6 +66,6 @@ export const Info = styled.div`
 export const Description = styled.div`
   font-family: var(--fontCard);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
 `;
