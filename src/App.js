@@ -8,7 +8,7 @@ import Footer from "./layout/Footer";
 
 // Header Components
 import AdminMenu from "./components/Menu/AdminMenu";
-import MenuHeader from "./components/Menu/MenuHeader";
+import HeaderMenu from "./components/Menu/HeaderMenu";
 
 // Pages Components
 import Home from "./pages/Home";
@@ -24,22 +24,26 @@ import FAQ from "./pages/FAQ";
 
 // Admin Pages Components
 import Login from "./pages/Login";
-import Admin from "./pages/Admin";
+import Dashboard from "./pages/Dashboard";
+import AddProduct from "./pages/Dashboard/AddProduct";
+import EditProduct from "./pages/Dashboard/EditProduct";
 
 //  Footer Components
-import MenuFooter from "./components/Menu/MenuFooter";
+import FooterMenu from "./components/Menu/FooterMenu";
 
-// Hooks
+// Service
 import { AuthProvider } from "./services/AuthContext";
+import Protected from "./services/Protected";
 
 // Styles
 import { Modal } from "./App.styled";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const bodyContainer = document.querySelector("body");
 
   const toggle = () => {
+    const bodyContainer = document.querySelector("body");
+
     if (window.innerWidth < 768) {
       setIsOpen(!isOpen);
       bodyContainer.classList.toggle("overflow");
@@ -59,7 +63,7 @@ function App() {
       <div>
         <AdminMenu />
         <Header>
-          <MenuHeader isOpen={isOpen} toggle={toggle} />
+          <HeaderMenu isOpen={isOpen} toggle={toggle} />
         </Header>
         <Main>
           <Routes>
@@ -75,12 +79,35 @@ function App() {
             <Route path="faq" element={<FAQ />} />
 
             <Route path="login" element={<Login />} />
-            <Route path="admin" element={<Admin />} />
+            <Route
+              path="dashboard"
+              element={
+                <Protected>
+                  <Dashboard />
+                </Protected>
+              }
+            />
+            <Route
+              path="dashboard/add-product"
+              element={
+                <Protected>
+                  <AddProduct />
+                </Protected>
+              }
+            />
+            <Route
+              path="dashboard/edit-product"
+              element={
+                <Protected>
+                  <EditProduct />
+                </Protected>
+              }
+            />
           </Routes>
         </Main>
       </div>
       <Footer>
-        <MenuFooter />
+        <FooterMenu />
       </Footer>
     </AuthProvider>
   );

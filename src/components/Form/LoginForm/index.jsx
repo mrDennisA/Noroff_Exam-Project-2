@@ -53,7 +53,7 @@ export default function LoginForm() {
       setAuth(response.data);
 
       // Redirect to another page
-      navigate("/admin", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (error) {
       console.log("error", error);
 

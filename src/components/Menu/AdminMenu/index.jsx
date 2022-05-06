@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // Hooks
@@ -15,28 +15,26 @@ export default function AdminMenu() {
     setAuth(null);
     navigate("/", { replace: true });
   }
-  // console.log(auth);
-  // useEffect(() => {
-  //   if (auth === null) {
-  //     navigate("/", { replace: true });
-  //   }
-  // });
 
   return (
     <div className="bgDarkBrown">
       <div className="container">
         <div className="wrapper">
           <Section>
-            <div>
-              {auth ? (
-                <>
-                  <Link to="admin">Admin</Link>
-                  <button onClick={logout}>Logout</button>
-                </>
-              ) : (
-                <Link to="login">login</Link>
-              )}
-            </div>
+            {auth ? (
+              <>
+                <Link to="dashboard">
+                  <span>Dashboard</span>
+                </Link>
+                <button onClick={logout}>
+                  <span>Logout</span>
+                </button>
+              </>
+            ) : (
+              <Link to="login">
+                <span>login</span>
+              </Link>
+            )}
           </Section>
         </div>
       </div>

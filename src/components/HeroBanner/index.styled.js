@@ -6,13 +6,13 @@ export const Section = styled.section`
 
 export const Hero = styled.div`
   position: relative;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 88px);
   max-height: 900px;
 
   transition: max-height var(--timer) ease;
 
   @media only screen and (min-width: 768px) {
-    height: calc(100vh - 152px);
+    height: calc(100vh - 184px);
   }
 
   h1 {

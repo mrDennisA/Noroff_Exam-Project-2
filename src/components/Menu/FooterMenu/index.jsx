@@ -1,6 +1,6 @@
-import { Link, Menu, Line, SubMenu, SubLine, Rights } from "./MenuFooter.styled";
+import { Link, Menu, Line, SubMenu, SubLine, Rights } from "./index.styled";
 
-export default function MenuFooter() {
+export default function FooterMenu() {
   return (
     <>
       <Menu className="menu">

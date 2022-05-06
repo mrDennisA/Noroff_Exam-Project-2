@@ -44,7 +44,7 @@ export const SideLink = styled.div`
   width: 100%;
   height: 100%;
   padding: 0.5rem 1rem;
-
+  border-top: 2rem solid var(--warmGray1C50);
   background: var(--white);
 
   transform: translateX(${({ isOpen }) => (isOpen ? "0" : "100%")});
