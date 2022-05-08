@@ -8,8 +8,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 // Components
 import Wrapper from "../../layout/Wrapper";
-import Article from "../../components/Article/Article";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
+import Article from "../../components/Article";
 
 const url =
   ABOUT_URL +
@@ -31,7 +30,6 @@ export default function About() {
       <>
         <Wrapper>
           <Article data={articleData} />
-          <ScrollToTop />
         </Wrapper>
       </>
     );

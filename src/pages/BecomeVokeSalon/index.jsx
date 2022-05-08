@@ -2,10 +2,9 @@ import { useRef } from "react";
 
 // Component
 import Wrapper from "../../layout/Wrapper";
-import Article from "../../components/Article/Article";
+import Article from "../../components/Article";
 import Heading from "../../components/Heading";
 import RegisterForm from "../../components/Form/RegisterForm";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 
 // Styles
 import { Section } from "./index.styled";
@@ -48,7 +47,6 @@ export default function BecomeVokeSalon() {
           </div>
           <RegisterForm />
         </Section>
-        <ScrollToTop />
       </>
     );
   }

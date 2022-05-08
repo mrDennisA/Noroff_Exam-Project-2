@@ -2,7 +2,7 @@ import { useMatch, useResolvedPath } from "react-router-dom";
 
 // Components
 import Logo from "../../Logo";
-import { BAROPEN_ICON, BARCLOSED_ICON } from "../../Icons/Icons";
+import { BAROPEN_ICON, BARCLOSED_ICON } from "../../common/Icons";
 
 // Styles
 import { NavLogo, Button, Nav, NavLink, SideLink, Link } from "./index.styled";

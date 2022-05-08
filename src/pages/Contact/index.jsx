@@ -3,7 +3,6 @@ import { useRef } from "react";
 // Component
 import Heading from "../../components/Heading";
 import ContactForm from "../../components/Form/ContactForm";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 
 // Styles
 import { Section, Line, ContactInfo } from "./index.styled";
@@ -57,7 +56,6 @@ export default function Contact() {
             </Section>
           </div>
         </div>
-        <ScrollToTop />
       </>
     );
   }

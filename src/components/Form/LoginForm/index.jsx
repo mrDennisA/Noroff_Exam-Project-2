@@ -10,8 +10,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL, TOKEN_PATH } from "../../../services/API";
 
 // Components
-import ValidationError from "../../Error/ValidationError";
-import ButtonSubmit from "../../Buttons/ButtonSubmit";
+import ValidationError from "../../common/Error/ValidationError";
+import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import AuthContext from "../../../services/AuthContext";
 
 // Styles
@@ -78,7 +78,7 @@ export default function LoginForm() {
           <Input {...register("password")} />
           {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
         </Label>
-        <ButtonSubmit>{submitting ? "Loggin in..." : "Login"}</ButtonSubmit>
+        <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Loggin in..." : "Login"}</ButtonSubmit>
       </fieldset>
     </Form>
   );

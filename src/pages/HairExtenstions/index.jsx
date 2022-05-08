@@ -7,9 +7,8 @@ import { HAIR_EXTENSTIONS_PAGE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
-import Article from "../../components/Article/Article";
+import Article from "../../components/Article";
 import HairExtenstionsList from "../../components/Product/HairExtenstionsList";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 import Wrapper from "../../layout/Wrapper";
 
 const url =
@@ -34,7 +33,6 @@ export default function MasterHairExtenstions() {
           <Article data={articleData} />
         </Wrapper>
         <HairExtenstionsList />
-        <ScrollToTop />
       </>
     );
   }

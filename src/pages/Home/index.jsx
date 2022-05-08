@@ -11,9 +11,8 @@ import Wrapper from "../../layout/Wrapper";
 
 // Components
 import HeroBanner from "../../components/HeroBanner";
-import Article from "../../components/Article/Article";
+import Article from "../../components/Article";
 import BlogList from "../../components/Blog/BlogList";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 
 // Functions
 import scrollToElement from "../../utils/ScrollToElement";
@@ -49,9 +48,7 @@ export default function Home() {
         <Wrapper ref={firstArticle}>
           <Article data={article} />
         </Wrapper>
-
         <BlogList />
-        <ScrollToTop />
       </>
     );
   }

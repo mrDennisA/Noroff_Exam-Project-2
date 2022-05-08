@@ -74,3 +74,7 @@ export const Textarea = styled.textarea`
     box-shadow: 0 0 0 1px var(--pink);
   }
 `;
+
+export const Select = styled.select`
+  font-size: 1rem;
+`;

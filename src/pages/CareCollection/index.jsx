@@ -8,10 +8,9 @@ import { useFetch } from "../../hooks/useFetch";
 
 // Components
 
-import Article from "../../components/Article/Article";
+import Article from "../../components/Article";
 import ArticleIngredients from "../../components/Article/ArticleIngredients";
 import CareCollectionList from "../../components/Product/CareCollectionList";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 import Wrapper from "../../layout/Wrapper";
 
 const url =
@@ -41,7 +40,6 @@ export default function CareCollection() {
           <ArticleIngredients data={ingredients} />
         </Wrapper>
         <CareCollectionList />
-        <ScrollToTop />
       </>
     );
   }

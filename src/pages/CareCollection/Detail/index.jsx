@@ -9,10 +9,9 @@ import { CARE_COLLECTION_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
-import ResponsiveImage from "../../../components/ResponsiveImage";
+import ResponsiveImage from "../../../components/common/ResponsiveImage";
 import Heading from "../../../components/Heading";
-import TabGroup from "../../../components/Tab/TabGroup";
-import ScrollToTop from "../../../components/Buttons/ScrollToTop";
+import TabGroup from "../../../components/common/Tab";
 
 // Styles
 import { Section, ImageContainer, Info } from "./index.styled";
@@ -53,7 +52,6 @@ export default function Detail() {
             </Section>
           </div>
         </div>
-        <ScrollToTop />
       </>
     );
   }

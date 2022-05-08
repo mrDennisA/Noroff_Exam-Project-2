@@ -8,8 +8,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 // Components
 import Heading from "../../components/Heading";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
-import { TableContainer, TableHead, TableBody } from "../../components/Table";
+import { TableContainer, TableHead, TableBody } from "../../components/common/Table";
 
 import { Container, TableGrid } from "./index.styled";
 
@@ -52,7 +51,6 @@ export default function PartnerSalons() {
             </Container>
           </div>
         </div>
-        <ScrollToTop />
       </>
     );
   }

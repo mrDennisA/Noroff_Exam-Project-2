@@ -1,6 +1,6 @@
 // Components
 import Heading from "../Heading";
-import ScrollToButton from "../Buttons/ScrollToButton";
+import ScrollToButton from "../common/Buttons/ScrollToButton";
 
 // Styles
 import { Section, Hero, Container } from "./index.styled";

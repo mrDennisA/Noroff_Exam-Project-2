@@ -13,7 +13,7 @@ export default function AdminMenu() {
 
   function logout() {
     setAuth(null);
-    navigate("/", { replace: true });
+    navigate("/l", { replace: true });
   }
 
   return (

@@ -7,9 +7,8 @@ import { FAQ_PAGE_URL, POPULATE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Component
-import Accordion from "../../components/Accordion";
+import Accordion from "../../components/common/Accordion";
 import Heading from "../../components/Heading";
-import ScrollToTop from "../../components/Buttons/ScrollToTop";
 
 import { Container } from "./index.styled";
 
@@ -39,7 +38,6 @@ export default function FAQ() {
             </Container>
           </div>
         </div>
-        <ScrollToTop />
       </>
     );
   }
