@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
 // Componenets
-import Heading from "../../../Heading";
+import Heading from "../../Heading";
 import { ARROW_ICON } from "../../Icons";
 
 // Styles

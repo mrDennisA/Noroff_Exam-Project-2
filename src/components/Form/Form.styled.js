@@ -42,7 +42,7 @@ export const Input = styled.input`
   background-color: var(--white);
   padding: 10px 8px;
   margin-top: 2px;
-  box-shadow: 0 0 0 1px var(--warmGray1C50), 0 0 0 4px transparent;
+  box-shadow: 0 0 0 1px var(--warmGray1C50);
   border-radius: var(--radius);
   transition: box-shadow var(--timer) ease;
 
@@ -61,7 +61,7 @@ export const Textarea = styled.textarea`
   background-color: var(--white);
   padding: 6px 8px;
   margin-top: 2px;
-  box-shadow: 0 0 0 1px var(--warmGray1C50), 0 0 0 4px transparent;
+  box-shadow: 0 0 0 1px var(--warmGray1C50);
   border-radius: var(--radius);
   transition: box-shadow var(--timer) ease;
   resize: vertical;
@@ -76,5 +76,25 @@ export const Textarea = styled.textarea`
 `;
 
 export const Select = styled.select`
+  padding: 10px 8px;
+  margin-top: 2px;
+  background-color: var(--white);
+  line-height: 20px;
+  font-size: 1rem;
+  box-shadow: 0 0 0 1px var(--warmGray1C50);
+  border-radius: var(--radius);
+  transition: box-shadow var(--timer) ease;
+  width: 100%;
+
+  :hover {
+    box-shadow: 0 0 0 1px var(--lightBrown);
+  }
+
+  :focus {
+    box-shadow: 0 0 0 1px var(--pink);
+  }
+`;
+
+export const Option = styled.option`
   font-size: 1rem;
 `;

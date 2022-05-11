@@ -75,7 +75,7 @@ export default function LoginForm() {
         </Label>
         <Label>
           Password:
-          <Input {...register("password")} />
+          <Input type="password" {...register("password")} />
           {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
         </Label>
         <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Loggin in..." : "Login"}</ButtonSubmit>

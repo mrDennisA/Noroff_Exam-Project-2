@@ -1,5 +1,6 @@
 // Components
-import Heading from "../Heading";
+import Heading from "../common/Heading";
+import ResponsiveImage from "../common/ResponsiveImage";
 import ScrollToButton from "../common/Buttons/ScrollToButton";
 
 // Styles
@@ -10,11 +11,11 @@ export default function HeroBanner({ data, onClick }) {
     <Section className="bgC50">
       {data.map((item) => {
         const title = item.title;
-        const desktopImg = item.desktop.data.attributes.url;
-        // console.log(item.desktop.data.attributes.url);
+        const cover = item.desktop.data.attributes;
+        // console.log(item.desktop.data.attributes);
         return (
           <Hero key={item.id}>
-            <img src={desktopImg} alt="" />
+            <ResponsiveImage data={cover} />
             <Heading>{title}</Heading>
           </Hero>
         );

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   position: relative;
+  padding-bottom: 4rem;
 `;
 
 export const Hero = styled.div`
@@ -21,7 +22,7 @@ export const Hero = styled.div`
     left: 0;
     right: 0;
     text-align: center;
-    transform: translateY(-128px);
+    transform: translateY(-8rem);
     padding: 0 0.5rem;
   }
 
@@ -34,5 +35,5 @@ export const Container = styled.div`
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -4rem);
+  transform: translate(-50%, -6rem);
 `;

@@ -9,7 +9,7 @@ import { BLOGS_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 
 // Styles
 import { Section } from "./index.styled";

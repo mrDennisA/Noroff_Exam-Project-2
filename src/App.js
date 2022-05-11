@@ -39,8 +39,8 @@ import Protected from "./services/Protected";
 import { Modal } from "./App.styled";
 
 function App() {
+  // Header Menu Toggle
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => {
     const bodyContainer = document.querySelector("body");
 
@@ -68,7 +68,7 @@ function App() {
         <Main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="blog/:slug" element={<BlogPost />} />
+            <Route path=":slug" element={<BlogPost />} />
             <Route path="hair-extenstions" element={<HairExtenstions />} />
             <Route path="care-collection" element={<CareCollection />} />
             <Route path="care-collection/:slug" element={<Detail />} />
@@ -96,7 +96,7 @@ function App() {
               }
             />
             <Route
-              path="dashboard/edit-product"
+              path="dashboard/:id"
               element={
                 <Protected>
                   <EditProduct />

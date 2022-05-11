@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 // Component
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import ContactForm from "../../components/Form/ContactForm";
 
 // Styles

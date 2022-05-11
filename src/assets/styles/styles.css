@@ -75,11 +75,6 @@ img {
 
 .bgC50 {
   background-color: var(--warmGray1C50);
-  padding-bottom: 2rem;
-}
-
-.bgDarkBrown {
-  background-color: var(--darkBrown);
 }
 
 @media only screen and (min-width: 576px) {

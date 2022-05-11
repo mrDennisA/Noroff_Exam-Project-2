@@ -6,6 +6,7 @@ import AuthContext from "../../../services/AuthContext";
 
 // Styles
 import { Section } from "./index.styled";
+import Wrapper from "../../../layout/Wrapper";
 
 export default function AdminMenu() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -13,31 +14,27 @@ export default function AdminMenu() {
 
   function logout() {
     setAuth(null);
-    navigate("/l", { replace: true });
+    navigate("/", { replace: true });
   }
 
   return (
-    <div className="bgDarkBrown">
-      <div className="container">
-        <div className="wrapper">
-          <Section>
-            {auth ? (
-              <>
-                <Link to="dashboard">
-                  <span>Dashboard</span>
-                </Link>
-                <button onClick={logout}>
-                  <span>Logout</span>
-                </button>
-              </>
-            ) : (
-              <Link to="login">
-                <span>login</span>
-              </Link>
-            )}
-          </Section>
-        </div>
-      </div>
-    </div>
+    <Wrapper>
+      <Section>
+        {auth ? (
+          <>
+            <Link to="dashboard">
+              <span>Dashboard</span>
+            </Link>
+            <button onClick={logout}>
+              <span>Logout</span>
+            </button>
+          </>
+        ) : (
+          <Link to="login">
+            <span>login</span>
+          </Link>
+        )}
+      </Section>
+    </Wrapper>
   );
 }

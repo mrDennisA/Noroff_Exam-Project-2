@@ -24,12 +24,12 @@ export const Section = styled.section`
       vertical-align: middle;
       line-height: 20px;
       font-size: 14px;
-      font-weight: 300;
-      color: var(--white);
+      font-weight: 400;
+      color: var(--brown);
     }
 
     :hover {
-      text-decoration-color: var(--white);
+      text-decoration-color: var(--brown);
     }
   }
 `;

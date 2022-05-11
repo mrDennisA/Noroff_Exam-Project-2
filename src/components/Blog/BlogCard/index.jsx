@@ -1,4 +1,4 @@
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 import ButtonBlog from "../../common/Buttons/ButtonBlog";
 import ResponsiveImage from "../../common/ResponsiveImage";
 
@@ -17,11 +17,11 @@ export default function BlogPostCard({ data }) {
 
         return (
           <Card key={id}>
-            <ResponsiveImage data={item.attributes.cover.data.attributes.formats} />
+            <ResponsiveImage data={item.attributes.cover.data.attributes} />
             <Info>
               <Heading element="h3">{title}</Heading>
               <p>{description}</p>
-              <ButtonBlog to={`blog/${slug}`}>read more</ButtonBlog>
+              <ButtonBlog to={`${slug}`}>read more</ButtonBlog>
             </Info>
           </Card>
         );

@@ -7,7 +7,7 @@ import { CARE_COLLECTION_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 import ProductCard from "../ProductCard";
 
 // Styles

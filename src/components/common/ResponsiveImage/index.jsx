@@ -1,15 +1,18 @@
 export default function ResponsiveImage({ data }) {
-  const { thumbnail, small, medium, large } = data;
+  const { thumbnail, small, medium, large } = data.formats;
+  // console.log(data);
 
   return (
     <img
-      src={thumbnail.url}
       srcSet={`
+      ${thumbnail ? thumbnail.url + " " + thumbnail.width + "w," : ""}
       ${small ? small.url + " " + small.width + "w," : ""}
       ${medium ? medium.url + " " + medium.width + "w," : ""}
       ${large ? large.url + " " + large.width + "w," : ""}
+      ${data.url + " " + data.width + "w,"}
       `}
-      alt=""
+      src={thumbnail.url}
+      alt={data.alternativeText}
     />
   );
 }

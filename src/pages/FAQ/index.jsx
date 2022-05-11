@@ -8,7 +8,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 // Component
 import Accordion from "../../components/common/Accordion";
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 
 import { Container } from "./index.styled";
 

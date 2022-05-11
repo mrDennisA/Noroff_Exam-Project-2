@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
 // Components
-import Heading from "../Heading";
+import Heading from "../common/Heading";
 import ButtonCTA from "../common/Buttons/ButtonCTA";
 import ResponsiveImage from "../common/ResponsiveImage";
 
@@ -28,7 +28,7 @@ export default function ArticleComp({ data }) {
               {item.imagegroup[0].image.data.map((item) => {
                 return (
                   <div key={item.id}>
-                    <ResponsiveImage data={item.attributes.formats} />
+                    <ResponsiveImage data={item.attributes} />
                   </div>
                 );
               })}

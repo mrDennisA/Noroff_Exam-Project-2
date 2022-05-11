@@ -3,7 +3,7 @@ import { useRef } from "react";
 // Component
 import Wrapper from "../../layout/Wrapper";
 import Article from "../../components/Article";
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import RegisterForm from "../../components/Form/RegisterForm";
 
 // Styles
@@ -30,7 +30,7 @@ export default function BecomeVokeSalon() {
   }
 
   if (!loading) {
-    console.log(data.data);
+    // console.log(data.data);
     const pageTitle = data.data.attributes.pageTitle;
     const text = data.data.attributes.text;
     const articleData = data.data.attributes.article;

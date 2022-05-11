@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ResponsiveImage from "../../common/ResponsiveImage";
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 
 import { Card, Info, Description } from "./index.styled";
 
@@ -16,7 +16,7 @@ export default function ProductCard(props) {
 
         const Container = ({ children }) => {
           if (props.link) {
-            return <Link to={`${slug}`}>{children}</Link>;
+            return <Link to={slug}>{children}</Link>;
           } else {
             return <div>{children}</div>;
           }
@@ -30,7 +30,7 @@ export default function ProductCard(props) {
                 {item.attributes.cover.data.map((item) => {
                   const imgID = item.id;
 
-                  return <ResponsiveImage key={imgID} data={item.attributes.formats} />;
+                  return <ResponsiveImage key={imgID} data={item.attributes} />;
                 })}
               </div>
               <Info>

@@ -10,7 +10,7 @@ import { useFetch } from "../../../hooks/useFetch";
 
 // Components
 import ResponsiveImage from "../../../components/common/ResponsiveImage";
-import Heading from "../../../components/Heading";
+import Heading from "../../../components/common/Heading";
 import TabGroup from "../../../components/common/Tab";
 
 // Styles
@@ -28,7 +28,7 @@ export default function Detail() {
   }
 
   if (!loading) {
-    console.log(data.data.attributes.tab);
+    // console.log(data.data.attributes.tab);
     const title = data.data.attributes.title;
     const cover = data.data.attributes.cover.data;
     const text = data.data.attributes.text;
@@ -41,7 +41,7 @@ export default function Detail() {
             <Section>
               <ImageContainer>
                 {cover.map((item) => (
-                  <ResponsiveImage key={item.id} data={item.attributes.formats} />
+                  <ResponsiveImage key={item.id} data={item.attributes} />
                 ))}
               </ImageContainer>
               <Heading>{title}</Heading>

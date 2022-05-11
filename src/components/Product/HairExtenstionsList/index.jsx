@@ -7,7 +7,7 @@ import { HAIR_EXTENSTIONS_COLLECTIONS_URL, POPULATE_URL } from "../../../service
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 import ProductCard from "../ProductCard";
 
 // Styles

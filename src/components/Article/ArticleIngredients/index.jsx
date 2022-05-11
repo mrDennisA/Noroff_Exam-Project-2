@@ -1,5 +1,5 @@
 // Components
-import Heading from "../../Heading";
+import Heading from "../../common/Heading";
 import ResponsiveImage from "../../common/ResponsiveImage";
 
 // Styles
@@ -13,7 +13,7 @@ export default function ArticleIngredients(props) {
         {props.data.map((item) => {
           // console.log(item);
           const id = item.id;
-          const cover = item.cover.data.attributes.formats;
+          const cover = item.cover.data.attributes;
           const title = item.title;
           const description = item.description;
 

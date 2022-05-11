@@ -7,7 +7,7 @@ import { PARTNER_SALONS_PAGE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import { TableContainer, TableHead, TableBody } from "../../components/common/Table";
 
 import { Container, TableGrid } from "./index.styled";

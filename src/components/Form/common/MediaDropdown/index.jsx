@@ -1,50 +1,59 @@
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
 import { useTokenFetch } from "../../../../hooks/useTokenFetch";
-
 import ResponsiveImage from "../../../common/ResponsiveImage";
 
-export default function MediaDropdown({ register }) {
+import { Content, Media } from "./index.styled";
+import { Select, Option } from "../../Form.styled";
+
+export default function MediaDropdown(props) {
+  const { register, defaultValue = "none" } = props;
+
   const [display, setDisplay] = useState(false);
 
   // Fetch Data
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useTokenFetch("/upload/files", isComponentMounted, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    if (!loading) {
+      data.filter((image) => defaultValue === image.id && setDisplay(image));
+    }
+  }, [data, defaultValue, loading]);
+
+  const onChange = (item) => {
+    console.log(item);
+    data.filter((image) => parseFloat(item.target.value) === image.id && setDisplay(image));
+  };
 
   if (error) {
     console.log(error);
   }
 
-  if (!loading) {
-    const onChange = (item) => {
-      if (!isNaN(item.target.value)) {
-        data.map((image) => parseFloat(item.target.value) === image.id && setDisplay(image));
-      } else {
-        setDisplay(false);
-      }
-    };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
+  if (!loading) {
     return (
-      <>
-        <div onChange={onChange}>
-          <select name="cover" {...register("cover")}>
-            <option value="select">Select an asset</option>
+      <Content onChange={onChange}>
+        <Media>{display ? <ResponsiveImage data={display} /> : <span>image</span>}</Media>
+        <Select {...register("cover")} defaultValue={defaultValue}>
+          <>
+            {defaultValue === "none" && (
+              <Option value={defaultValue} hidden>
+                None
+              </Option>
+            )}
             {data.map((item) => {
-              // console.log(item);
               return (
-                <option key={item.id} value={item.id}>
+                <Option key={item.id} value={item.id}>
                   {item.name}
-                </option>
+                </Option>
               );
             })}
-          </select>
-        </div>
-        <div>{display ? <ResponsiveImage data={display.formats} /> : false}</div>
-      </>
+          </>
+        </Select>
+      </Content>
     );
   }
 }

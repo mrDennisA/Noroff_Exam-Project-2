@@ -8,7 +8,7 @@ export const Section = styled.section`
 export const Article = styled.article`
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin-bottom: 4rem;
   background-color: var(--white);
   overflow: hidden;
   border-radius: var(--radius);
