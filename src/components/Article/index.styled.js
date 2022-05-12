@@ -57,6 +57,7 @@ export const Article = styled.article`
 
   /* IMAGE */
   & > div:nth-child(2) {
+    position: relative;
     display: flex;
 
     div {
@@ -80,12 +81,11 @@ export const Article = styled.article`
       flex-basis: 70%;
     }
 
-    img {
-      min-height: 250px;
-      max-height: 500px;
+    &.carousel {
+      min-height: 400px;
 
       @media only screen and (min-width: 768px) {
-        max-height: unset;
+        min-height: 500px;
       }
     }
   }
@@ -97,9 +97,4 @@ export const RichText = styled.div`
     width: 150px;
     height: 150px;
   }
-`;
-
-export const ImageContainer = styled.div`
-  /* display: flex;
-  justify-content: flex-end; */
 `;

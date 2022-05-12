@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 // Components
 import Heading from "../common/Heading";
 import ButtonCTA from "../common/Buttons/ButtonCTA";
+import Carousel from "../common/Carousel";
 import ResponsiveImage from "../common/ResponsiveImage";
 
 // Styles
@@ -24,14 +25,24 @@ export default function ArticleComp({ data }) {
               </RichText>
               {pageLink.data ? <ButtonCTA to={pageLink.data.attributes.slug}>Learn more</ButtonCTA> : ""}
             </div>
-            <div className={imagePercent}>
-              {item.imagegroup[0].image.data.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <ResponsiveImage data={item.attributes} />
-                  </div>
-                );
-              })}
+            <div className={item.imagegroup.length > 1 ? imagePercent + " carousel" : imagePercent}>
+              {item.imagegroup.length > 1 ? (
+                <Carousel data={item.imagegroup} />
+              ) : (
+                item.imagegroup.map((imgList, index) => {
+                  return (
+                    <div key={index}>
+                      {imgList.image.data.map((img) => {
+                        return (
+                          <div key={img.id}>
+                            <ResponsiveImage data={img.attributes} />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })
+              )}
             </div>
           </Article>
         );

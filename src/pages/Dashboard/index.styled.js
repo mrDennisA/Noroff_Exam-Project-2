@@ -19,6 +19,7 @@ export const ListContainer = styled.div`
   display: grid;
   background-color: var(--white);
   padding: 1rem;
+
   width: 100%;
   max-width: 600px;
   overflow: hidden;
@@ -28,15 +29,22 @@ export const ListContainer = styled.div`
 
 export const Card = styled.div`
   padding: 0.5rem 0;
+
   border-bottom: 1px solid var(--lightBrown);
 
+  :first-child {
+    padding: 0 0 0.5rem;
+  }
+
   :last-child {
+    padding: 0.5rem 0 0;
     border-bottom: unset;
   }
 
   img {
-    height: 48px;
-    width: 48px;
+    margin: 4px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
   }
 `;
@@ -45,4 +53,8 @@ export const Link = styled(L)`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  :hover span {
+    color: var(--pink);
+  }
 `;

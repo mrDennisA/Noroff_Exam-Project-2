@@ -39,7 +39,7 @@ export default function Dashboard() {
                   <Card key={item.id}>
                     <Link to={`${item.id}`}>
                       <ResponsiveImage data={cover} />
-                      <div>{title}</div>
+                      <span>{title}</span>
                     </Link>
                   </Card>
                 );
