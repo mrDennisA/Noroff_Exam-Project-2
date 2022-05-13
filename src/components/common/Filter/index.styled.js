@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   box-shadow: 0 -1px 0 var(--lightBrown) inset;
+  margin: 0 1rem;
 `;
 
 export const Button = styled.button`
