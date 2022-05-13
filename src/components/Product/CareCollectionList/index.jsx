@@ -19,6 +19,14 @@ export default function HairExtenstionsList() {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
+  if (loading) {
+    <div>Loading...</div>;
+  }
+
+  if (error) {
+    console.log(error);
+  }
+
   if (!loading) {
     // console.log(data);
     return (

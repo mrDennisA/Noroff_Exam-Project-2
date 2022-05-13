@@ -41,9 +41,10 @@ import { Modal } from "./App.styled";
 function App() {
   // Header Menu Toggle
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    const bodyContainer = document.querySelector("body");
 
+  const bodyContainer = document.querySelector("body");
+
+  const toggle = () => {
     if (window.innerWidth < 768) {
       setIsOpen(!isOpen);
       bodyContainer.classList.toggle("overflow");

@@ -1,8 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const cardAnimation = keyframes`
+  0% {opacity: 0; 
+    transform: perspective(800px) rotateY(-10deg) rotateX(-10deg);
+    }
+  100% {
+    opacity: 1;  transform: perspective(800px) rotateY(0) rotateX(0);
+    }
+`;
 
 export const Card = styled.div`
+  position: relative;
   display: flex;
   max-width: 300px;
+  opacity: 0;
+
+  transform: perspective(800px) rotateY(0) rotateX(0);
+
+  animation-name: ${cardAnimation};
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-delay: ${(props) => props.delay + "ms"};
 
   @media only screen and (min-width: 576px) {
     max-width: unset;
