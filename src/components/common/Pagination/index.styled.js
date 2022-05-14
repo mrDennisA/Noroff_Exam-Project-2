@@ -4,16 +4,13 @@ export const Container = styled.div`
   ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
   li {
     padding: unset;
     margin: unset;
-
-    overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 8px var(--shadow);
   }
 
   button {

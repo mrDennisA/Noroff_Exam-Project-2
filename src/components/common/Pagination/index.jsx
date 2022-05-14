@@ -1,6 +1,5 @@
 import { Container } from "./index.styled";
 
-// export default function Pagination({ itemsPerPage, totalItems, paginate, currentPage }) {
 export default function Pagination({ data }) {
   const pageNumbers = [];
 

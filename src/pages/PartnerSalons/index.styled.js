@@ -19,3 +19,13 @@ export const TableGrid = styled.section`
   gap: 2rem;
   margin: 2rem 0;
 `;
+
+export const TableContent = styled.div`
+  display: grid;
+  gap: 2rem;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px var(--shadow);
+  padding: 8px;
+`;

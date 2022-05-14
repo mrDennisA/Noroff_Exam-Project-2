@@ -1,4 +1,4 @@
-import { useRef, Fragment } from "react";
+import React, { useRef, useState } from "react";
 
 // API URL
 import { PARTNER_SALONS_PAGE_URL } from "../../services/API";
@@ -10,12 +10,17 @@ import { useFetch } from "../../hooks/useFetch";
 import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import { TableContainer, TableHead, TableBody } from "../../components/common/Table";
+import Pagination from "../../components/common/Pagination";
 
-import { Container, TableGrid } from "./index.styled";
+import { Container, TableGrid, TableContent } from "./index.styled";
 
 const url = PARTNER_SALONS_PAGE_URL + "?populate=table.countries.partnerSalons";
 
 export default function PartnerSalons() {
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
+
   // Fetch Data
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
@@ -25,8 +30,14 @@ export default function PartnerSalons() {
   }
 
   function RenderPage() {
+    // Change page
+    const paginate = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
+
     const pageTitle = data.data.attributes.pageTitle;
     const tableData = data.data.attributes.table.countries.data;
+
     return (
       <>
         <div className="container">
@@ -37,14 +48,24 @@ export default function PartnerSalons() {
                 {tableData.map((item) => {
                   const countryName = item.attributes.countryName;
                   const partnerSalons = item.attributes.partnerSalons.data;
+
+                  // Get current items
+                  const indexOfLastItem = currentPage * itemsPerPage;
+                  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+                  const currentItems = partnerSalons.slice(indexOfFirstItem, indexOfLastItem);
+                  const totalItems = partnerSalons.length;
+
                   return (
-                    <TableContainer key={item.id}>
-                      <TableHead data={[countryName, "Address"]} />
-                      {partnerSalons.map((item) => {
-                        const { name, address } = item.attributes;
-                        return <TableBody key={item.id} data={[name, address]} />;
-                      })}
-                    </TableContainer>
+                    <TableContent key={item.id}>
+                      <TableContainer>
+                        <TableHead data={[countryName, "Address"]} />
+                        {currentItems.map((item) => {
+                          const { name, address } = item.attributes;
+                          return <TableBody key={item.id} data={[name, address]} />;
+                        })}
+                      </TableContainer>
+                      <Pagination data={{ itemsPerPage, totalItems, paginate, currentPage }} />
+                    </TableContent>
                   );
                 })}
               </TableGrid>

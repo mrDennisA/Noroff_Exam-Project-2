@@ -2,11 +2,6 @@ import styled from "styled-components";
 
 export const Table = styled.table`
   display: grid;
-  background-color: var(--white);
-  overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 8px var(--shadow);
-  padding: 8px;
 `;
 
 export const Thead = styled.thead`
@@ -32,7 +27,7 @@ export const Tbody = styled.tbody`
 
   :last-child {
     tr {
-      border-bottom: unset;
+      /* border-bottom: unset; */
     }
   }
 `;
