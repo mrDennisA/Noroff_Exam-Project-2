@@ -20,7 +20,6 @@ export default function AccordionItem({ data }) {
     setDimensions(contentHeight.current.scrollHeight + 16);
 
     window.addEventListener("resize", () => {
-      setDimensions(null);
       setTimeout(() => {
         setDimensions(contentHeight.current.scrollHeight + 16);
       }, 20);

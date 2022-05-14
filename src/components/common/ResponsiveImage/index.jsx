@@ -11,7 +11,7 @@ export default function ResponsiveImage({ data }) {
       ${large ? large.url + " " + large.width + "w," : ""}
       ${data.url + " " + data.width + "w,"}
       `}
-      src={thumbnail.url}
+      src={data.url}
       alt={data.alternativeText}
     />
   );

@@ -1,12 +1,14 @@
 import Breadcrumbs from "../../components/common/Breadcrumbs";
 import ScrollToTop from "../../components/common/Buttons/ScrollToTop";
 
+import { Container } from "./index.styled";
+
 export default function Main({ children }) {
   return (
-    <main>
+    <Container>
       <Breadcrumbs />
       {children}
       <ScrollToTop />
-    </main>
+    </Container>
   );
 }

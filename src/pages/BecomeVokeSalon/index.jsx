@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 // Component
+import PageLoader from "../../components/common/PageLoader";
 import Wrapper from "../../layout/Wrapper";
 import Article from "../../components/Article";
 import Heading from "../../components/common/Heading";
@@ -29,8 +30,7 @@ export default function BecomeVokeSalon() {
     console.log(error);
   }
 
-  if (!loading) {
-    // console.log(data.data);
+  function RenderPage() {
     const pageTitle = data.data.attributes.pageTitle;
     const text = data.data.attributes.text;
     const articleData = data.data.attributes.article;
@@ -50,4 +50,11 @@ export default function BecomeVokeSalon() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

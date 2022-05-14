@@ -60,7 +60,8 @@ export const Article = styled.article`
     position: relative;
     display: flex;
 
-    div {
+    & > div,
+    & > div > div {
       display: flex;
       width: 100%;
     }

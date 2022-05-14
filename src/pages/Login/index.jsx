@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 import LoginForm from "../../components/Form/LoginForm";
 import Heading from "../../components/common/Heading";

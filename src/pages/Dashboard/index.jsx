@@ -7,6 +7,7 @@ import { HAIR_EXTENSTIONS_COLLECTIONS_URL, POPULATE_URL } from "../../services/A
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import ResponsiveImage from "../../components/common/ResponsiveImage";
 
@@ -22,9 +23,8 @@ export default function Dashboard() {
   if (error) {
     console.log(error);
   }
-  if (!loading) {
-    // console.log(data);
 
+  function RenderPage() {
     return (
       <div className="container">
         <div className="wrapper">
@@ -50,4 +50,11 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

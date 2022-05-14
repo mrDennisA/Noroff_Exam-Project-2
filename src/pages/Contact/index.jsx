@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 // Component
+import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import ContactForm from "../../components/Form/ContactForm";
 
@@ -24,12 +25,10 @@ export default function Contact() {
     console.log(error);
   }
 
-  if (!loading) {
+  function RenderPage() {
     const pageTitle = data.data.attributes.pageTitle;
     const text = data.data.attributes.text;
     const contact = data.data.attributes.contact;
-
-    // console.log(contact);
 
     return (
       <>
@@ -59,4 +58,11 @@ export default function Contact() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

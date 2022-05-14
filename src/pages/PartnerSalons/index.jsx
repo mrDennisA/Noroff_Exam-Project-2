@@ -7,6 +7,7 @@ import { PARTNER_SALONS_PAGE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import { TableContainer, TableHead, TableBody } from "../../components/common/Table";
 
@@ -23,10 +24,9 @@ export default function PartnerSalons() {
     console.log(error);
   }
 
-  if (!loading) {
+  function RenderPage() {
     const pageTitle = data.data.attributes.pageTitle;
     const tableData = data.data.attributes.table.countries.data;
-
     return (
       <>
         <div className="container">
@@ -54,4 +54,11 @@ export default function PartnerSalons() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

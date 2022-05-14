@@ -9,6 +9,7 @@ import { CARE_COLLECTION_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
+import PageLoader from "../../../components/common/PageLoader";
 import ResponsiveImage from "../../../components/common/ResponsiveImage";
 import Heading from "../../../components/common/Heading";
 import TabGroup from "../../../components/common/Tab";
@@ -27,8 +28,7 @@ export default function Detail() {
     console.log(error);
   }
 
-  if (!loading) {
-    // console.log(data.data.attributes.tab);
+  function RenderPage() {
     const title = data.data.attributes.title;
     const cover = data.data.attributes.cover.data;
     const text = data.data.attributes.text;
@@ -55,4 +55,11 @@ export default function Detail() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

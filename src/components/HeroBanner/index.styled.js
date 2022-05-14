@@ -8,21 +8,18 @@ export const Section = styled.section`
 export const Hero = styled.div`
   position: relative;
   height: calc(100vh - 88px);
+  /* height: calc(${(props) => props.dimensions + "px"} - 88px); */
   max-height: 900px;
-
   transition: max-height var(--timer) ease;
+
+  display: flex;
 
   @media only screen and (min-width: 768px) {
     height: calc(100vh - 184px);
+    /* height: calc(${(props) => props.dimensions + "px"} - 184px); */
   }
 
   h1 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    transform: translateY(-8rem);
     padding: 0 0.5rem;
   }
 
@@ -31,9 +28,18 @@ export const Hero = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const HeadingContainer = styled.div`
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -6rem);
+  inset: 0 0 33% 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+export const ButtonContainer = styled.div`
+  position: absolute;
+  inset: 0 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;

@@ -7,6 +7,7 @@ import { FAQ_PAGE_URL, POPULATE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Component
+import PageLoader from "../../components/common/PageLoader";
 import Accordion from "../../components/common/Accordion";
 import Heading from "../../components/common/Heading";
 
@@ -23,11 +24,9 @@ export default function FAQ() {
     console.log(error);
   }
 
-  if (!loading) {
-    console.log(data);
+  function RenderPage() {
     const pageTitle = data.data.attributes.pageTitle;
     const AccordionData = data.data.attributes.accordion;
-
     return (
       <>
         <div className="container">
@@ -41,4 +40,11 @@ export default function FAQ() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

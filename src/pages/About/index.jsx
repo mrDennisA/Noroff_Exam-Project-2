@@ -7,6 +7,7 @@ import { ABOUT_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import PageLoader from "../../components/common/PageLoader";
 import Wrapper from "../../layout/Wrapper";
 import Article from "../../components/Article";
 
@@ -23,9 +24,8 @@ export default function About() {
     console.log(error);
   }
 
-  if (!loading) {
+  function RenderPage() {
     const articleData = data.data.attributes.article;
-
     return (
       <>
         <Wrapper>
@@ -34,4 +34,11 @@ export default function About() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }

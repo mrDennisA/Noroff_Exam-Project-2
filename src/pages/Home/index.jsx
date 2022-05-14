@@ -10,6 +10,7 @@ import { useFetch } from "../../hooks/useFetch";
 import Wrapper from "../../layout/Wrapper";
 
 // Components
+import PageLoader from "../../components/common/PageLoader";
 import HeroBanner from "../../components/HeroBanner";
 import Article from "../../components/Article";
 import BlogList from "../../components/Blog/BlogList";
@@ -31,17 +32,12 @@ export default function Home() {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
   if (error) {
     console.log(error);
   }
 
-  if (!loading) {
+  function RenderPage() {
     const { herobanner, article } = data.data.attributes;
-
     return (
       <>
         <HeroBanner data={herobanner} onClick={() => scrollToElement(firstArticle)} />
@@ -52,4 +48,11 @@ export default function Home() {
       </>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }
