@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 // Component
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Wrapper from "../../layout/Wrapper";
 import Article from "../../components/Article";
@@ -37,6 +38,7 @@ export default function BecomeVokeSalon() {
 
     return (
       <>
+        <Head title="Become a Voke Salon – Voke Hair" keywords="" description="" />;
         <Wrapper>
           <Article data={articleData} />
         </Wrapper>

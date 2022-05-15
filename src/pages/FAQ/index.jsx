@@ -7,6 +7,7 @@ import { FAQ_PAGE_URL, POPULATE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Component
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Accordion from "../../components/common/Accordion";
 import Heading from "../../components/common/Heading";
@@ -29,6 +30,7 @@ export default function FAQ() {
     const AccordionData = data.data.attributes.accordion;
     return (
       <>
+        <Head title="FAQ – Voke Hair" keywords="" description="" />;
         <div className="container">
           <div className="wrapper">
             <Container>

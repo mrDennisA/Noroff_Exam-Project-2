@@ -7,6 +7,7 @@ import { ABOUT_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Wrapper from "../../layout/Wrapper";
 import Article from "../../components/Article";
@@ -28,6 +29,7 @@ export default function About() {
     const articleData = data.data.attributes.article;
     return (
       <>
+        <Head title="About – Voke Hair" keywords="" description="" />
         <Wrapper>
           <Article data={articleData} />
         </Wrapper>

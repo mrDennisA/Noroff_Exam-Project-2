@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 // Component
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import ContactForm from "../../components/Form/ContactForm";
@@ -32,6 +33,7 @@ export default function Contact() {
 
     return (
       <>
+        <Head title="Contact – Voke Hair" keywords="" description="" />
         <div className="container">
           <div className="wrapper">
             <Section>

@@ -9,6 +9,7 @@ import { CARE_COLLECTION_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
+import Head from "../../../components/common/Head";
 import PageLoader from "../../../components/common/PageLoader";
 import ResponsiveImage from "../../../components/common/ResponsiveImage";
 import Heading from "../../../components/common/Heading";
@@ -36,6 +37,7 @@ export default function Detail() {
 
     return (
       <>
+        <Head title={data.data.attributes.title + " – Voke Hair"} keywords="" description="" />;
         <div className="container">
           <div className="wrapper">
             <Section>

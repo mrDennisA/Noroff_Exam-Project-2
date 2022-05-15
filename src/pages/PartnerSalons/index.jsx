@@ -7,6 +7,7 @@ import { PARTNER_SALONS_PAGE_URL } from "../../services/API";
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import { TableContainer, TableHead, TableBody } from "../../components/common/Table";
@@ -40,6 +41,7 @@ export default function PartnerSalons() {
 
     return (
       <>
+        <Head title="Partner Salons – Voke Hair" keywords="" description="" />;
         <div className="container">
           <div className="wrapper">
             <Container>

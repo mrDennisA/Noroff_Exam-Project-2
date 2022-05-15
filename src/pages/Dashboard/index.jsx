@@ -7,6 +7,7 @@ import { HAIR_EXTENSTIONS_COLLECTIONS_URL, POPULATE_URL } from "../../services/A
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Heading from "../../components/common/Heading";
 import ResponsiveImage from "../../components/common/ResponsiveImage";
@@ -26,28 +27,31 @@ export default function Dashboard() {
 
   function RenderPage() {
     return (
-      <div className="container">
-        <div className="wrapper">
-          <Section>
-            <Heading>Dashboard</Heading>
-            <Link to="add-product">Add Product</Link>
-            <ListContainer>
-              {data.data.reverse().map((item) => {
-                const title = item.attributes.title;
-                const cover = item.attributes.cover.data[0].attributes;
-                return (
-                  <Card key={item.id}>
-                    <Link to={`${item.id}`}>
-                      <ResponsiveImage data={cover} />
-                      <span>{title}</span>
-                    </Link>
-                  </Card>
-                );
-              })}
-            </ListContainer>
-          </Section>
+      <>
+        <Head title="Dashboard – Voke Hair" keywords="" description="" />
+        <div className="container">
+          <div className="wrapper">
+            <Section>
+              <Heading>Dashboard</Heading>
+              <Link to="add-product">Add Product</Link>
+              <ListContainer>
+                {data.data.reverse().map((item) => {
+                  const title = item.attributes.title;
+                  const cover = item.attributes.cover.data[0].attributes;
+                  return (
+                    <Card key={item.id}>
+                      <Link to={`${item.id}`}>
+                        <ResponsiveImage data={cover} />
+                        <span>{title}</span>
+                      </Link>
+                    </Card>
+                  );
+                })}
+              </ListContainer>
+            </Section>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 

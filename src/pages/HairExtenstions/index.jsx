@@ -7,6 +7,7 @@ import { HAIR_EXTENSTIONS_PAGE_URL, HAIR_EXTENSTIONS_COLORS_URL } from "../../se
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Article from "../../components/Article";
 import HairExtenstionsList from "../../components/Product/HairExtenstionsList";
@@ -32,6 +33,7 @@ export default function MasterHairExtenstions() {
     const articleData = data.data.attributes.article;
     return (
       <>
+        <Head title="Voke Master Hair Extensions – Voke Hair" keywords="" description="" />
         <Wrapper>
           <Article data={articleData} />
         </Wrapper>

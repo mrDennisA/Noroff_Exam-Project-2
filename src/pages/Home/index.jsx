@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 // API URL
 import { HOME_PAGE_URL } from "../../services/API";
@@ -10,6 +10,7 @@ import { useFetch } from "../../hooks/useFetch";
 import Wrapper from "../../layout/Wrapper";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import HeroBanner from "../../components/HeroBanner";
 import Article from "../../components/Article";
@@ -40,6 +41,7 @@ export default function Home() {
     const { herobanner, article } = data.data.attributes;
     return (
       <>
+        <Head title="Voke Hair – Hair Extensions" keywords="" description="" />
         <HeroBanner data={herobanner} onClick={() => scrollToElement(firstArticle)} />
         <Wrapper ref={firstArticle}>
           <Article data={article} />

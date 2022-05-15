@@ -7,6 +7,7 @@ import { CARE_COLLECTION_PAGE_URL, CARE_COLLECTION_URL, POPULATE_URL } from "../
 import { useFetch } from "../../hooks/useFetch";
 
 // Components
+import Head from "../../components/common/Head";
 import PageLoader from "../../components/common/PageLoader";
 import Article from "../../components/Article";
 import ArticleIngredients from "../../components/Article/ArticleIngredients";
@@ -35,6 +36,7 @@ export default function CareCollection() {
     const ingredients = data.data.attributes.ingredients;
     return (
       <>
+        <Head title="Voke Care Collection – Voke Hair" keywords="" description="" />
         <Wrapper>
           <Article data={articleData} />
           <ArticleIngredients data={ingredients} />
