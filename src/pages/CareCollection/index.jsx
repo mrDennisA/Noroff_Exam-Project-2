@@ -27,8 +27,12 @@ export default function CareCollection() {
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
   const { data: dataProduct, loading: loadingProduct, error: errorProduct } = useFetch(urlProduct, isComponentMounted, []);
 
-  if (error || errorProduct) {
-    console.log(error || errorProduct);
+  if (error) {
+    console.log(error);
+  }
+
+  if (errorProduct) {
+    console.log(errorProduct);
   }
 
   function RenderPage() {
@@ -48,7 +52,7 @@ export default function CareCollection() {
 
   return (
     <>
-      <PageLoader loading={loading} />
+      <PageLoader loading={loading} loadingProduct={loadingProduct} />
       {!loading && !loadingProduct && <RenderPage />}
     </>
   );

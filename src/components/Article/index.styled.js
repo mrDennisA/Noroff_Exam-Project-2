@@ -89,6 +89,14 @@ export const Article = styled.article`
         min-height: 500px;
       }
     }
+
+    img {
+      max-height: 400px;
+
+      @media only screen and (min-width: 768px) {
+        max-height: unset;
+      }
+    }
   }
 `;
 
