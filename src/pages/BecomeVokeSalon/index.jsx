@@ -38,7 +38,7 @@ export default function BecomeVokeSalon() {
 
     return (
       <>
-        <Head title="Become a Voke Salon – Voke Hair" keywords="" description="" />;
+        <Head title="Become a Voke Salon – Voke Hair" keywords="" description="" />
         <Wrapper>
           <Article data={articleData} />
         </Wrapper>
