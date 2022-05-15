@@ -9,7 +9,7 @@ export default function PageLoader({ loading, loadingProduct = false }) {
       setElement(<Modal style={{ opacity: 0 }}>{/* <div>Loading</div> */}</Modal>);
       setTimeout(() => {
         setElement(null);
-      }, 800);
+      }, 400);
     }
   }, [loading, loadingProduct]);
 

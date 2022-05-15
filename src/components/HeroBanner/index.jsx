@@ -10,21 +10,21 @@ import { Section, Hero, HeadingContainer, ButtonContainer } from "./index.styled
 import { useState } from "react";
 
 export default function HeroBanner({ data, onClick }) {
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-
-  const handleSize = () => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+  const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
 
   useLayoutEffect(() => {
-    handleSize();
+    const handleSize = () => {
+      if (windowSize.width !== window.innerWidth) {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+    };
 
     window.addEventListener("resize", handleSize);
     return () => window.removeEventListener("resize", handleSize);
-  }, []);
+  }, [windowSize]);
 
   return (
     <Section className="bgC50">
