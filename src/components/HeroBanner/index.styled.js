@@ -7,16 +7,16 @@ export const Section = styled.section`
 
 export const Hero = styled.div`
   position: relative;
-  height: calc(100vh - 88px);
-  /* height: calc(${(props) => props.dimensions + "px"} - 88px); */
+  /* height: calc(100vh - 88px); */
+  height: calc(${(props) => props.dimensions + "px"} - 88px);
   max-height: 900px;
   transition: max-height var(--timer) ease;
 
   display: flex;
 
   @media only screen and (min-width: 768px) {
-    height: calc(100vh - 184px);
-    /* height: calc(${(props) => props.dimensions + "px"} - 184px); */
+    /* height: calc(100vh - 184px); */
+    height: calc(${(props) => props.dimensions + "px"} - 184px);
   }
 
   h1 {

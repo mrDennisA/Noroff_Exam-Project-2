@@ -42,18 +42,21 @@ function App() {
   // Header Menu Toggle
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleSize = () => {
+    if (window.innerWidth >= 768) {
+      setIsOpen(false);
+      document.body.style.overflow = null;
+      window.removeEventListener("resize", handleSize);
+    }
+  };
+
   const toggle = () => {
     if (window.innerWidth < 768) {
       setIsOpen(!isOpen);
       document.body.style.overflow = document.body.style.overflow ? null : "hidden";
     }
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-        document.body.style.overflow = null;
-      }
-    });
+    window.addEventListener("resize", handleSize);
   };
 
   return (

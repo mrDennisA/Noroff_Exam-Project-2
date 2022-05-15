@@ -8,15 +8,15 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   background-color: var(--warmGray1C50);
-  transition: 0.4s ease;
+  transition: 0.8s ease;
 
   div {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--lightBrown);
-    transition: 0.4s ease;
+    transition: 0.8s ease;
   }
 `;

@@ -9,6 +9,7 @@ import { BLOGS_URL, POPULATE_URL } from "../../../services/API";
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
+import PageLoader from "../../common/PageLoader";
 import Heading from "../../common/Heading";
 
 // Styles
@@ -25,7 +26,7 @@ export default function BlogPost() {
     console.log(error);
   }
 
-  if (!loading) {
+  function RenderPage() {
     // console.log(data.data);
     const title = data.data.attributes.title;
     const desciption = data.data.attributes.description;
@@ -65,4 +66,11 @@ export default function BlogPost() {
       </div>
     );
   }
+
+  return (
+    <>
+      <PageLoader loading={loading} />
+      {!loading && <RenderPage />}
+    </>
+  );
 }
