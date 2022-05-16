@@ -2,22 +2,24 @@ import { useState, useEffect } from "react";
 import { Modal } from "./index.styled";
 
 export default function PageLoader({ loading, loadingProduct = false }) {
-  const [visible, setVisible] = useState(true);
-  const [visibleDiv, setVisibleDiv] = useState(false);
+  const [visibleModal, setVisibleModal] = useState(true);
+  const [visibleLoading, setVisibleLoading] = useState(false);
 
   useEffect(() => {
     if (loading || loadingProduct) {
       setTimeout(() => {
-        setVisibleDiv(true);
+        setVisibleLoading(true);
       }, 800);
     }
 
     if (!loading && !loadingProduct) {
       setTimeout(() => {
-        setVisible(false);
+        setVisibleModal(false);
       }, 400);
     }
   }, [loading, loadingProduct]);
 
-  return visible ? <Modal className={!loading && !loadingProduct ? "" : "active"}>{<div className={visibleDiv ? "active" : ""}>Loading</div>}</Modal> : null;
+  return visibleModal ? (
+    <Modal className={!loading && !loadingProduct ? "" : "active"}>{<div className={visibleLoading ? "active" : ""}>Loading</div>}</Modal>
+  ) : null;
 }
