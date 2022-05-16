@@ -41,7 +41,7 @@ export default function PartnerSalons() {
 
     return (
       <>
-        <Head title="Partner Salons – Voke Hair" keywords="" description="" />;
+        <Head title="Partner Salons – Voke Hair" keywords="" description="" />
         <div className="container">
           <div className="wrapper">
             <Container>

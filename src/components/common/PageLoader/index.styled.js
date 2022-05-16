@@ -8,7 +8,7 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--white); */
+  opacity: 0;
   background-color: var(--warmGray1C50);
   transition: 0.4s ease;
 
@@ -18,5 +18,14 @@ export const Modal = styled.div`
     font-weight: 700;
     color: var(--lightBrown);
     transition: 0.4s ease;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    opacity: 1;
   }
 `;
