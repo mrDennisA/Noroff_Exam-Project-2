@@ -24,6 +24,7 @@ export const Section = styled.section`
 
   @media only screen and (min-width: 576px) {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
       "grid02 grid02"
       "grid01 grid03"
