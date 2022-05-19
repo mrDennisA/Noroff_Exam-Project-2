@@ -33,7 +33,7 @@ export const Section = styled.section`
   }
 
   @media only screen and (min-width: 992px) {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-areas:
       "grid01 grid02"
       "grid01 grid03"
@@ -47,21 +47,25 @@ export const Section = styled.section`
 `;
 
 export const ImageContainer = styled.div`
-  /* flex: 1; */
   grid-area: grid01;
 
-  img {
-    overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 8px var(--shadow);
-    background-color: var(--white);
-    min-height: 400px;
-    max-height: 500px;
-    object-fit: contain;
+  & > button {
+    width: 100%;
+    cursor: pointer;
 
-    @media only screen and (min-width: 992px) {
-      max-height: 600px;
-      height: 100vh;
+    img {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 8px var(--shadow);
+      background-color: var(--white);
+      min-height: 400px;
+      max-height: 500px;
+      object-fit: contain;
+
+      @media only screen and (min-width: 992px) {
+        max-height: 600px;
+        height: 100vh;
+      }
     }
   }
 `;
@@ -69,7 +73,6 @@ export const ImageContainer = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 1rem;
 
   grid-area: grid03;

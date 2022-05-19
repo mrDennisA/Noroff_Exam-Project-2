@@ -11,9 +11,9 @@ import { useFetch } from "../../../hooks/useFetch";
 // Components
 import Head from "../../../components/common/Head";
 import PageLoader from "../../../components/common/PageLoader";
-import ResponsiveImage from "../../../components/common/ResponsiveImage";
 import Heading from "../../../components/common/Heading";
 import TabGroup from "../../../components/common/Tab";
+import ImageModal from "../../../components/common/Modal/ImageModal";
 
 // Styles
 import { Section, ImageContainer, Info } from "./index.styled";
@@ -22,6 +22,7 @@ export default function Detail() {
   const { slug } = useParams();
   const url = CARE_COLLECTION_URL + "/" + slug + POPULATE_URL;
 
+  // Fetch Data
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
 
@@ -42,9 +43,7 @@ export default function Detail() {
           <div className="wrapper">
             <Section>
               <ImageContainer>
-                {cover.map((item) => (
-                  <ResponsiveImage key={item.id} data={item.attributes} />
-                ))}
+                <ImageModal data={cover} />
               </ImageContainer>
               <Heading>{title}</Heading>
               <Info>
