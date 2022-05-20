@@ -51,7 +51,7 @@ export const ImageContainer = styled.div`
 
   & > button {
     width: 100%;
-    cursor: pointer;
+    cursor: zoom-in;
 
     img {
       overflow: hidden;

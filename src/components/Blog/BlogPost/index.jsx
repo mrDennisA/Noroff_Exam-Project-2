@@ -32,21 +32,24 @@ export default function BlogPost() {
     const desciption = data.data.attributes.description;
     const richText = data.data.attributes.richText;
 
+    const imgList = (data) => {
+      console.log(data);
+      return data.map(
+        (img, index) =>
+          img.tagName === "img" && (
+            <div key={index}>
+              <img src={img.properties.src} alt={img.properties.alt} />
+            </div>
+          )
+      );
+    };
+
     const ReactMarkdownComponents = {
       p: ({ node, children }) => {
-        if (node.children[0].tagName === "img") {
-          return (
-            <div>
-              <div>
-                <img src={node.children[0].properties.src} alt={node.children[0].properties.alt} />
-              </div>
-              {node.children[2] && (
-                <div>
-                  <img src={node.children[2].properties.src} alt={node.children[2].properties.alt} />
-                </div>
-              )}
-            </div>
-          );
+        if (node.children[0].tagName === "img" && node.children.length > 1) {
+          return <div>{imgList(node.children)}</div>;
+        } else if (node.children[0].tagName === "img") {
+          return imgList(node.children);
         }
 
         // Return default child if it's not an image

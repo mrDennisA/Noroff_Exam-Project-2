@@ -36,22 +36,20 @@ export default function ImageModal(props) {
         );
       })}
       {display && (
-        <>
-          <ModalContainer>
-            <Content>
-              {props.data.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <ResponsiveImage data={item.attributes} />
-                  </div>
-                );
-              })}
-              <ButtonContainer>
-                <button onClick={displayToggle}>{BARCLOSED_ICON}</button>
-              </ButtonContainer>
-            </Content>
-          </ModalContainer>
-        </>
+        <ModalContainer>
+          <Content>
+            {props.data.map((item) => {
+              return (
+                <div key={item.id}>
+                  <ResponsiveImage data={item.attributes} />
+                </div>
+              );
+            })}
+            <ButtonContainer>
+              <button onClick={displayToggle}>{BARCLOSED_ICON}</button>
+            </ButtonContainer>
+          </Content>
+        </ModalContainer>
       )}
     </>
   );
