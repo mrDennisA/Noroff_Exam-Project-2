@@ -8,11 +8,7 @@ export const Section = styled.section`
   gap: 1rem;
 
   h3 {
-    margin-top: 1rem;
-  }
-
-  & > div {
-    /* margin-top: 2rem; */
+    margin-top: 2rem;
   }
 
   & > div {
@@ -22,19 +18,13 @@ export const Section = styled.section`
     gap: 1rem;
     width: 100%;
 
-    margin: 1rem 0 2rem;
-
     @media only screen and (min-width: 576px) {
       flex-direction: row;
     }
-  }
 
-  p,
-  strong {
-    /* margin-top: 1rem; */
-  }
-
-  span {
+    button {
+      width: 100%;
+    }
   }
 
   img {

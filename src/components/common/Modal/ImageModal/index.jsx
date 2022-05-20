@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 
+// Components
 import ResponsiveImage from "../../ResponsiveImage";
 import { BARCLOSED_ICON } from "../../Icons";
 
-import { ModalContainer, Content, ButtonContainer } from "./index.styled";
+// Styles
+import { Modal, Content } from "./index.styled";
 
-export default function ImageModal(props) {
-  const [display, setDisplay] = useState(false);
+export default function ModalImage(props) {
+  const [displayModal, setDisplayModal] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
   const displayToggle = () => {
-    setDisplay(!display);
+    setDisplayModal(!displayModal);
     document.body.style.overflow = document.body.style.overflow ? null : "hidden";
   };
 
   const closeOnKey = (e) => {
     if (e.keyCode === 27) {
-      displayToggle();
+      setDisplayModal(false);
+      document.body.style.overflow = null;
     }
   };
 
@@ -26,30 +30,27 @@ export default function ImageModal(props) {
     };
   });
 
+  const data = props.data.attributes ? props.data.attributes : props.data.properties;
+
   return (
     <>
-      {props.data.map((item) => {
-        return (
-          <button key={item.id} onClick={displayToggle}>
-            <ResponsiveImage data={item.attributes} />
-          </button>
-        );
-      })}
-      {display && (
-        <ModalContainer>
+      <button
+        onClick={() => {
+          displayToggle();
+          setModalData(data);
+        }}
+      >
+        {props.data.attributes ? <ResponsiveImage data={data} /> : <img src={data.src} alt={data.alt} />}
+      </button>
+      {displayModal && (
+        <Modal>
           <Content>
-            {props.data.map((item) => {
-              return (
-                <div key={item.id}>
-                  <ResponsiveImage data={item.attributes} />
-                </div>
-              );
-            })}
-            <ButtonContainer>
+            <div>{props.data.attributes ? <ResponsiveImage data={modalData} /> : <img src={modalData.src} alt={modalData.alt} />}</div>
+            <div>
               <button onClick={displayToggle}>{BARCLOSED_ICON}</button>
-            </ButtonContainer>
+            </div>
           </Content>
-        </ModalContainer>
+        </Modal>
       )}
     </>
   );

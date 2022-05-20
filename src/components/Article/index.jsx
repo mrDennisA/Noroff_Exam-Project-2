@@ -29,14 +29,12 @@ export default function ArticleComp({ data }) {
               {item.imagegroup.length > 1 ? (
                 <Carousel data={item.imagegroup} />
               ) : (
-                item.imagegroup.map((imgList) => {
-                  return imgList.image.data.map((img) => {
-                    return (
-                      <div key={img.id}>
-                        <ResponsiveImage data={img.attributes} />
-                      </div>
-                    );
-                  });
+                item.imagegroup.map((item) => {
+                  return item.image.data.map((img) => (
+                    <div key={img.id}>
+                      <ResponsiveImage data={img.attributes} />
+                    </div>
+                  ));
                 })
               )}
             </div>

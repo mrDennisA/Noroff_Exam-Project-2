@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div`
+export const Modal = styled.div`
+  z-index: 100;
   position: fixed;
   inset: 0 0 0 0;
   background-color: var(--modal);
@@ -14,6 +15,7 @@ export const Content = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   border-radius: var(--radius);
   box-shadow: 0 4px 8px var(--shadow);
   background-color: var(--white);
@@ -32,15 +34,16 @@ export const Content = styled.section`
       max-height: calc(100vh - 8rem);
     }
   }
-`;
 
-export const ButtonContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  button {
+  /* Button */
+  & > :last-child {
+    position: relative;
     display: flex;
-    width: unset;
+    justify-content: center;
+
+    button {
+      display: flex;
+      width: unset;
+    }
   }
 `;

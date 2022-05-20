@@ -43,7 +43,9 @@ export default function Detail() {
           <div className="wrapper">
             <Section>
               <ImageContainer>
-                <ImageModal data={cover} />
+                {cover.map((item) => (
+                  <ImageModal key={item.id} data={item} />
+                ))}
               </ImageContainer>
               <Heading>{title}</Heading>
               <Info>

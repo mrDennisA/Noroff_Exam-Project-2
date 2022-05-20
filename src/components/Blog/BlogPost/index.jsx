@@ -11,6 +11,7 @@ import { useFetch } from "../../../hooks/useFetch";
 // Components
 import PageLoader from "../../common/PageLoader";
 import Heading from "../../common/Heading";
+import ModalImage from "../../common/Modal/ImageModal";
 
 // Styles
 import { Section } from "./index.styled";
@@ -32,24 +33,10 @@ export default function BlogPost() {
     const desciption = data.data.attributes.description;
     const richText = data.data.attributes.richText;
 
-    const imgList = (data) => {
-      console.log(data);
-      return data.map(
-        (img, index) =>
-          img.tagName === "img" && (
-            <div key={index}>
-              <img src={img.properties.src} alt={img.properties.alt} />
-            </div>
-          )
-      );
-    };
-
     const ReactMarkdownComponents = {
       p: ({ node, children }) => {
-        if (node.children[0].tagName === "img" && node.children.length > 1) {
-          return <div>{imgList(node.children)}</div>;
-        } else if (node.children[0].tagName === "img") {
-          return imgList(node.children);
+        if (node.children[0].tagName === "img") {
+          return <div>{node.children.map((item, index) => item.tagName === "img" && <ModalImage key={index} data={item} />)}</div>;
         }
 
         // Return default child if it's not an image
