@@ -50,7 +50,9 @@ export const ImageContainer = styled.div`
   grid-area: grid01;
 
   & > button {
+    display: flex;
     width: 100%;
+
     cursor: zoom-in;
 
     img {

@@ -7,9 +7,10 @@
   --warmGray1C50: #ebe8e5;
   --warmGray1C25: #f5f4f2;
 
-  --modal: rgba(0, 0, 0, 0.5);
+  --modal: hsla(0, 0%, 0%, 0.5);
   --shadow: hsla(0, 0%, 0%, 0.05);
   --shadowMiddle: hsla(0, 0%, 0%, 0.25);
+  --white50: hsla(0, 0%, 100%, 0.5);
 }
 
 * {

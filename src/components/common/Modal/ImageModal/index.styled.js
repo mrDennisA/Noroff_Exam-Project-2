@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Modal = styled.div`
+export const Modal = styled.section`
   z-index: 100;
   position: fixed;
   inset: 0 0 0 0;
@@ -11,7 +11,7 @@ export const Modal = styled.div`
   align-items: center;
 `;
 
-export const Content = styled.section`
+export const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,25 +21,20 @@ export const Content = styled.section`
   background-color: var(--white);
 
   img {
+    display: flex;
     max-width: calc(100vw - 2rem);
     max-height: calc(100vh - 2rem);
-
-    @media only screen and (min-width: 576px) {
-      max-width: calc(100vw - 4rem);
-      max-height: calc(100vh - 4rem);
-    }
-
-    @media only screen and (min-width: 768px) {
-      max-width: calc(100vw - 8rem);
-      max-height: calc(100vh - 8rem);
-    }
   }
 
   /* Button */
   & > :last-child {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
+    background-color: var(--white50);
 
     button {
       display: flex;

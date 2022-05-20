@@ -24,10 +24,12 @@ export const Section = styled.section`
 
     button {
       width: 100%;
+      cursor: zoom-in;
     }
   }
 
   img {
+    display: flex;
     max-height: 600px;
   }
 `;
