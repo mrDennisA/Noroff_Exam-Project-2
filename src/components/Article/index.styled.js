@@ -59,6 +59,8 @@ export const Article = styled.article`
   & > div:nth-child(2) {
     position: relative;
     display: flex;
+    overflow: hidden;
+    background-color: gray;
 
     & > div,
     & > div > div {

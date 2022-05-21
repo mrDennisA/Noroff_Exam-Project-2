@@ -11,6 +11,7 @@
   --shadow: hsla(0, 0%, 0%, 0.05);
   --shadowMiddle: hsla(0, 0%, 0%, 0.25);
   --white50: hsla(0, 0%, 100%, 0.5);
+  --gray: hsl(0, 0%, 50%);
 }
 
 * {
