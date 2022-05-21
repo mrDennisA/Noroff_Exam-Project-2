@@ -3,12 +3,12 @@ import { useEffect, useState, useRef } from "react";
 import ResponsiveImage from "../ResponsiveImage";
 import { ARROW_ICON } from "../Icons";
 
-import { Container, ButtonContainer, PrevButton, NextButton, SelectButton } from "./index.styled";
+import { Container, ButtonContainer, Arrows, Dots, PrevButton, NextButton, SelectButton } from "./index.styled";
 
-export default function Carousel({ data }) {
+export default function Carousel(props) {
   const [current, setCurrent] = useState(0);
   const [last, setLast] = useState(0);
-  const length = data.length;
+  const length = props.data.length;
   const timeout = useRef(null);
 
   // console.log(data);
@@ -34,13 +34,15 @@ export default function Carousel({ data }) {
       setCurrent(current === length - 1 ? 0 : current + 1);
     };
 
-    timeout.current = setTimeout(forwardSlide, 4000);
-    return () => timeout.current && clearTimeout(timeout.current);
-  }, [current, length]);
+    if (props.timer !== null) {
+      timeout.current = setTimeout(forwardSlide, props.timer);
+      return () => timeout.current && clearTimeout(timeout.current);
+    }
+  }, [current, props, length]);
 
   return (
     <>
-      {data.map((imgList, index) => {
+      {props.data.map((imgList, index) => {
         return (
           <Container key={index} className={index === current ? "active" : index === last ? "out" : ""}>
             {imgList.image.data.map((img) => {
@@ -53,27 +55,33 @@ export default function Carousel({ data }) {
           </Container>
         );
       })}
-      <ButtonContainer>
-        <div>
-          <PrevButton onClick={prevSlide}>{ARROW_ICON}</PrevButton>
-          <NextButton onClick={nextSlide}>{ARROW_ICON}</NextButton>
-        </div>
-        <div>
-          {Array(data.length)
-            .fill()
-            .map((_, index) => {
-              return (
-                <SelectButton
-                  key={index}
-                  onClick={() => {
-                    selectSlide(index);
-                  }}
-                  className={index === current ? "active" : ""}
-                ></SelectButton>
-              );
-            })}
-        </div>
-      </ButtonContainer>
+      {props.arrows || props.dots ? (
+        <ButtonContainer>
+          {props.arrows && (
+            <Arrows>
+              <PrevButton onClick={prevSlide}>{ARROW_ICON}</PrevButton>
+              <NextButton onClick={nextSlide}>{ARROW_ICON}</NextButton>
+            </Arrows>
+          )}
+          {props.dots && (
+            <Dots>
+              {Array(props.data.length)
+                .fill()
+                .map((_, index) => {
+                  return (
+                    <SelectButton
+                      key={index}
+                      onClick={() => {
+                        selectSlide(index);
+                      }}
+                      className={index === current ? "active" : ""}
+                    ></SelectButton>
+                  );
+                })}
+            </Dots>
+          )}
+        </ButtonContainer>
+      ) : null}
     </>
   );
 }

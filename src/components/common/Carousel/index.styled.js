@@ -36,48 +36,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  & > div:first-child {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-
-    button {
-      position: relative;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 4rem;
-      width: 2rem;
-      box-shadow: 0 0 0.5rem 0.5rem var(--shadow);
-
-      &::after {
-        content: "";
-        position: absolute;
-        inset: 0 0 0 0;
-
-        opacity: 0;
-
-        transition: var(--timer) ease;
-      }
-
-      &:hover::after {
-        opacity: 1;
-      }
-    }
-  }
-
-  & > div:last-child {
-    position: absolute;
-    bottom: 0;
-
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
   button {
     transition: var(--timer) ease;
     opacity: 0.5;
@@ -96,12 +54,54 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+export const Arrows = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 2rem;
+    box-shadow: 0 0 0.5rem 0.5rem var(--shadow);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 0;
+
+      opacity: 0;
+
+      transition: var(--timer) ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+`;
+
+export const Dots = styled.div`
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
 export const PrevButton = styled.button`
-  background-image: linear-gradient(90deg, var(--white50), transparent);
+  background-image: linear-gradient(90deg, var(--white25), transparent);
   border-radius: 0 var(--radius) var(--radius) 0;
 
   &::after {
-    background-image: linear-gradient(90deg, transparent, var(--white50));
+    background-image: linear-gradient(90deg, transparent, var(--white25));
     border-radius: 0 var(--radius) var(--radius) 0;
   }
 
@@ -111,11 +111,11 @@ export const PrevButton = styled.button`
 `;
 
 export const NextButton = styled.button`
-  background-image: linear-gradient(-90deg, var(--white50), transparent);
+  background-image: linear-gradient(-90deg, var(--white25), transparent);
   border-radius: var(--radius) 0 0 var(--radius);
 
   &::after {
-    background-image: linear-gradient(-90deg, transparent, var(--white50));
+    background-image: linear-gradient(-90deg, transparent, var(--white25));
     border-radius: var(--radius) 0 0 var(--radius);
   }
 
@@ -138,8 +138,8 @@ export const SelectButton = styled.button`
 
     width: 8px;
     height: 8px;
-    /* background-color: var(--white50); */
-    box-shadow: 0 0 0 1px var(--white) inset;
+    background-color: var(--shadowMiddle);
+    box-shadow: 0 0 0 1px var(--white) inset, 0 0 1rem 1px var(--modal);
     border-radius: 50%;
     transition: var(--timer) ease;
   }
@@ -155,11 +155,4 @@ export const SelectButton = styled.button`
     width: 12px;
     height: 12px;
   }
-  /* 
-
-
-  &.active {
-    background-color: var(--pink);
-    box-shadow: 0 0 0 1px var(--white) inset;
-  } */
 `;

@@ -27,7 +27,7 @@ export default function ArticleComp({ data }) {
             </div>
             <div className={item.imagegroup.length > 1 ? imagePercent + " carousel" : imagePercent}>
               {item.imagegroup.length > 1 ? (
-                <Carousel data={item.imagegroup} />
+                <Carousel data={item.imagegroup} arrows={false} dots={true} timer={4000} />
               ) : (
                 item.imagegroup.map((item) => {
                   return item.image.data.map((img) => (

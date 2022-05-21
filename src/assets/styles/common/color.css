@@ -1,5 +1,7 @@
 :root {
   --white: hsl(0, 0%, 100%);
+  --white50: hsla(0, 0%, 100%, 0.5);
+  --white25: hsla(0, 0%, 100%, 0.25);
   --pink: #ae2573;
   --darkBrown: #2b2523;
   --brown: #5e514d;
@@ -10,7 +12,7 @@
   --modal: hsla(0, 0%, 0%, 0.5);
   --shadow: hsla(0, 0%, 0%, 0.05);
   --shadowMiddle: hsla(0, 0%, 0%, 0.25);
-  --white50: hsla(0, 0%, 100%, 0.5);
+
   --gray: hsl(0, 0%, 50%);
 }
 
