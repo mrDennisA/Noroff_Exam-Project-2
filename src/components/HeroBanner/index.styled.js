@@ -8,14 +8,14 @@ export const Section = styled.section`
 export const Hero = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100vh - 88px);
-  /* height: calc(${(props) => props.dimensions + "px"} - 88px); */
+  /* height: calc(100vh - 88px); */
+  height: calc(${(props) => props.dimensions + "px"} - 88px);
   /* max-height: 900px; */
   /* max-height: 1080px; */
 
   @media only screen and (min-width: 768px) {
-    height: calc(100vh - 184px);
-    /* height: calc(${(props) => props.dimensions + "px"} - 184px); */
+    /* height: calc(100vh - 184px); */
+    height: calc(${(props) => props.dimensions + "px"} - 184px);
   }
 `;
 
@@ -26,22 +26,20 @@ export const MediaContainer = styled.div`
   height: 100%;
 
   img {
-    position: absolute;
+    /* position: absolute; */
     object-position: center 33%;
   }
 
-  iframe {
+  /* iframe {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw;
-    /* height: 56.25vw; */
-
-    aspect-ratio: 16/9;
-    min-height: 100vh;
-    min-width: 177.77vh;
-  }
+    height: 56.25vw;
+    width: 177.77vh;
+    min-height: 100%;
+    min-width: 100%;
+  } */
 `;
 
 export const HeadingContainer = styled.div`
@@ -61,17 +59,9 @@ export const HeadingContainer = styled.div`
 export const ButtonContainer = styled.div`
   position: absolute;
   left: 50%;
+  bottom: 24px;
   transform: translateX(-50%);
 
   display: flex;
   align-items: flex-end;
-
-  height: calc(${(props) => props.dimensions + "px"} - 112px);
-  /* max-height: 900px; */
-  /* max-height: 1080px; */
-
-  @media only screen and (min-width: 768px) {
-    /* height: calc(100vh - 184px); */
-    height: calc(${(props) => props.dimensions + "px"} - 208px);
-  }
 `;

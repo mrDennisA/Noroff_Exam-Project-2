@@ -14,12 +14,19 @@ export default function HeroBanner({ data, onClick }) {
 
   useLayoutEffect(() => {
     const handleSize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+      // setWindowSize({
+      //   width: window.innerWidth,
+      //   height: window.innerHeight,
+      // });
 
-      // if (windowSize.width !== window.innerWidth) {
+      if (windowSize.width !== window.innerWidth) {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+
+      // if (window.innerWidth >= 768) {
       //   setWindowSize({
       //     width: window.innerWidth,
       //     height: window.innerHeight,
@@ -41,20 +48,20 @@ export default function HeroBanner({ data, onClick }) {
           <Hero key={item.id} dimensions={windowSize.height}>
             <MediaContainer>
               <ResponsiveImage data={cover} />
-              <iframe
-                src="https://player.vimeo.com/video/691752226?h=6771f74db7&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;transparent=1&amp;background=1&amp;app_id=122963"
+              {/* <iframe
+                src="https://player.vimeo.com/video/691752226?h=6771f74db7&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;transparent=&amp;background=1&amp;app_id=122963"
                 frameBorder={0}
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"
                 allowFullScreen
                 title="Voke-Alle_02"
                 data-ready={true}
-              ></iframe>
+              ></iframe> */}
             </MediaContainer>
             <HeadingContainer>
               <Heading>{title}</Heading>
             </HeadingContainer>
-            <ButtonContainer dimensions={windowSize.height}>
+            <ButtonContainer>
               <ScrollToButton onClick={onClick} />
             </ButtonContainer>
           </Hero>

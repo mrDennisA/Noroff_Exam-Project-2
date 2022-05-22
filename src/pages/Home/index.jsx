@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 // API URL
-import { HOME_PAGE_URL } from "../../services/API";
+import { HOME_PAGE_URL, BLOGS_URL } from "../../services/API";
 
 // Hooks
 import { useFetch } from "../../hooks/useFetch";
@@ -25,6 +25,8 @@ const url =
   "&populate=article.imagegroup.image" + // Article
   "&populate=article.pageLink"; // Article Link
 
+const urlBlog = BLOGS_URL + "?populate=cover"; // Cover
+
 export default function Home() {
   // Scroll To
   const firstArticle = useRef(null);
@@ -32,9 +34,14 @@ export default function Home() {
   // Fetch Data
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
+  const { data: dataBlog, loading: loadingBlog, error: errorBlog } = useFetch(urlBlog, isComponentMounted, []);
 
   if (error) {
     console.log(error);
+  }
+
+  if (errorBlog) {
+    console.log(errorBlog);
   }
 
   function RenderPage() {
@@ -46,15 +53,15 @@ export default function Home() {
         <Wrapper ref={firstArticle}>
           <Article data={article} />
         </Wrapper>
-        <BlogList />
+        <BlogList data={dataBlog} />
       </>
     );
   }
 
   return (
     <>
-      <PageLoader loading={loading} />
-      {!loading && <RenderPage />}
+      <PageLoader loading={loading} loadingProduct={loadingBlog} />
+      {!loading && !loadingBlog && <RenderPage />}
     </>
   );
 }
