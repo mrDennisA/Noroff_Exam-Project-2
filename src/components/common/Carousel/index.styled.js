@@ -7,7 +7,7 @@ export const Container = styled.div`
   inset: 0 0 0 0;
   opacity: 0;
   transform: scale(1);
-  transition: opacity 0.4s ease;
+  transition: opacity 0.8s ease;
 
   &.active {
     opacity: 1;
@@ -15,8 +15,8 @@ export const Container = styled.div`
   }
 
   &.out {
-    transition: 0.4s ease;
-    transform: scale(1.1);
+    /* transition: 0.2s ease; */
+    /* transform: scale(1.1); */
   }
 
   img {
