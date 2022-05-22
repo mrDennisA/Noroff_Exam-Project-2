@@ -10,7 +10,7 @@ export const Article = styled.article`
   grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
   text-align: center;
-  margin: 2rem 0;
+  margin-bottom: 4rem;
   padding: 2rem 1rem;
   background-color: var(--white);
   overflow: hidden;
