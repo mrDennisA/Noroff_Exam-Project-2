@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { Link as L } from "react-router-dom";
 
+export const Modal = styled.div`
+  z-index: 100;
+  position: fixed;
+  inset: 0 0 0 0;
+
+  background-color: var(--modal);
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
 export const NavLogo = styled.div`
   display: flex;
   justify-content: space-between;
@@ -47,8 +59,12 @@ export const SideLink = styled.div`
   border-top: 2rem solid var(--warmGray1C50);
   background: var(--white);
 
-  transform: translateX(${({ isOpen }) => (isOpen ? "0" : "100%")});
+  transform: translateX(100%);
   transition: transform var(--timer) ease;
+
+  &.active {
+    transform: translateX(0%);
+  }
 
   @media only screen and (min-width: 768px) {
     display: none;

@@ -10,7 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL, TOKEN_PATH } from "../../../services/API";
 
 // Components
-import ValidationError from "../../common/Error/ValidationError";
+import ValidationMessage from "../../common/Message/ValidationMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import AuthContext from "../../../services/AuthContext";
 
@@ -66,17 +66,17 @@ export default function LoginForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {loginError && <ValidationError>{loginError}</ValidationError>}
+      {loginError && <ValidationMessage>{loginError}</ValidationMessage>}
       <fieldset disabled={submitting}>
         <Label>
           Username:
           <Input {...register("identifier")} />
-          {errors.identifier && <ValidationError>{errors.identifier.message}</ValidationError>}
+          {errors.identifier && <ValidationMessage>{errors.identifier.message}</ValidationMessage>}
         </Label>
         <Label>
           Password:
           <Input type="password" {...register("password")} />
-          {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
+          {errors.password && <ValidationMessage>{errors.password.message}</ValidationMessage>}
         </Label>
         <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Loggin in..." : "Login"}</ButtonSubmit>
       </fieldset>

@@ -7,13 +7,13 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 // API
-import { HAIR_EXTENSTIONS_COLLECTIONS_URL, HAIR_EXTENSTIONS_COLORS_URL, POPULATE_URL } from "../../../services/API";
+import { HAIR_EXTENSIONS_COLLECTIONS_URL, HAIR_EXTENSIONS_COLORS_URL, POPULATE_URL } from "../../../services/API";
 
 // Hooks
 import { useFetch } from "../../../hooks/useFetch";
 
 // Components
-import ValidationError from "../../common/Error/ValidationError";
+import ValidationMessage from "../../common/Message/ValidationMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import Dropdown from "../common/Dropdown";
 import MediaDropdown from "../common/MediaDropdown";
@@ -34,7 +34,7 @@ const schema = yup.object().shape({
 
 export default function EditForm() {
   const { id } = useParams();
-  const url = HAIR_EXTENSTIONS_COLLECTIONS_URL + "/" + id + POPULATE_URL;
+  const url = HAIR_EXTENSIONS_COLLECTIONS_URL + "/" + id + POPULATE_URL;
 
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
@@ -87,27 +87,27 @@ export default function EditForm() {
 
     return (
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {serverError && <ValidationError>{serverError}</ValidationError>}
+        {serverError && <ValidationMessage>{serverError}</ValidationMessage>}
         <fieldset disabled={submitting}>
           <Label>
             Title:
             <Input {...register("title")} defaultValue={title} />
-            {errors.title && <ValidationError>{errors.title.message}</ValidationError>}
+            {errors.title && <ValidationMessage>{errors.title.message}</ValidationMessage>}
           </Label>
           <Label>
             Description:
             <Textarea {...register("description")} defaultValue={info} />
-            {errors.description && <ValidationError>{errors.description.message}</ValidationError>}
+            {errors.description && <ValidationMessage>{errors.description.message}</ValidationMessage>}
           </Label>
           <Label>
             Select Cover:
             <MediaDropdown register={register} defaultValue={coverID} />
-            {errors.cover && <ValidationError>{errors.cover.message}</ValidationError>}
+            {errors.cover && <ValidationMessage>{errors.cover.message}</ValidationMessage>}
           </Label>
           <Label>
             Select Color:
-            <Dropdown register={register} defaultValue={colorID} registerName={"color"} url={HAIR_EXTENSTIONS_COLORS_URL} />
-            {errors.color && <ValidationError>{errors.color.message}</ValidationError>}
+            <Dropdown register={register} defaultValue={colorID} registerName={"color"} url={HAIR_EXTENSIONS_COLORS_URL} />
+            {errors.color && <ValidationMessage>{errors.color.message}</ValidationMessage>}
           </Label>
           <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Submitting..." : "Submit"}</ButtonSubmit>
           <DeleteButton id={id} />

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 // API URL
-import { HAIR_EXTENSTIONS_PAGE_URL, HAIR_EXTENSTIONS_COLORS_URL } from "../../services/API";
+import { HAIR_EXTENSIONS_PAGE_URL, HAIR_EXTENSIONS_COLORS_URL } from "../../services/API";
 
 // Hooks
 import { useFetch } from "../../hooks/useFetch";
@@ -14,13 +14,13 @@ import HairExtenstionsList from "../../components/Product/HairExtenstionsList";
 import Wrapper from "../../layout/Wrapper";
 
 const url =
-  HAIR_EXTENSTIONS_PAGE_URL +
+  HAIR_EXTENSIONS_PAGE_URL +
   "?populate=article.imagegroup.image" + // Article
   "&populate=article.pageLink"; // Article Link
 
-const urlProduct = HAIR_EXTENSTIONS_COLORS_URL + "?populate=hair_extenstions_collections.cover";
+const urlProduct = HAIR_EXTENSIONS_COLORS_URL + "?populate=hair_extenstions_collections.cover";
 
-export default function MasterHairExtenstions() {
+export default function HairExtensions() {
   const isComponentMounted = useRef(true);
   const { data, loading, error } = useFetch(url, isComponentMounted, []);
   const { data: dataProduct, loading: loadingProduct, error: errorProduct } = useFetch(urlProduct, isComponentMounted, []);

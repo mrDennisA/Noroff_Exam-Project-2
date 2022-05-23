@@ -25,11 +25,11 @@ export const MediaContainer = styled.div`
   height: 100%;
 
   img {
-    /* position: absolute; */
+    position: absolute;
     object-position: center 33%;
   }
 
-  /* iframe {
+  iframe {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,7 +38,7 @@ export const MediaContainer = styled.div`
     width: 177.77vh;
     min-height: 100%;
     min-width: 100%;
-  } */
+  }
 `;
 
 export const HeadingContainer = styled.div`

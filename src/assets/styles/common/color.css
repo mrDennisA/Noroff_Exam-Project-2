@@ -14,6 +14,8 @@
   --shadowMiddle: hsla(0, 0%, 0%, 0.25);
 
   --gray: hsl(0, 0%, 50%);
+
+  --green: #5dad58;
 }
 
 * {

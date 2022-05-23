@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Layout Components
@@ -13,7 +12,7 @@ import HeaderMenu from "./components/Menu/HeaderMenu";
 // Pages Components
 import Home from "./pages/Home";
 import BlogPost from "./components/Blog/BlogPost";
-import HairExtenstions from "./pages/HairExtenstions";
+import HairExtensions from "./pages/HairExtensions";
 import CareCollection from "./pages/CareCollection";
 import Detail from "./pages/CareCollection/Detail";
 import PartnerSalons from "./pages/PartnerSalons";
@@ -35,43 +34,19 @@ import FooterMenu from "./components/Menu/FooterMenu";
 import { AuthProvider } from "./services/AuthContext";
 import Protected from "./services/Protected";
 
-// Styles
-import { Modal } from "./App.styled";
-
 function App() {
-  // Header Menu Toggle
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSize = () => {
-    if (window.innerWidth >= 768) {
-      setIsOpen(false);
-      document.body.style.overflow = null;
-      window.removeEventListener("resize", handleSize);
-    }
-  };
-
-  const toggle = () => {
-    if (window.innerWidth < 768) {
-      setIsOpen(!isOpen);
-      document.body.style.overflow = document.body.style.overflow ? null : "hidden";
-    }
-
-    window.addEventListener("resize", handleSize);
-  };
-
   return (
     <AuthProvider>
-      <Modal isOpen={isOpen} onClick={toggle} />
       <div>
         <AdminMenu />
         <Header>
-          <HeaderMenu isOpen={isOpen} toggle={toggle} />
+          <HeaderMenu />
         </Header>
         <Main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path=":slug" element={<BlogPost />} />
-            <Route path="hair-extenstions" element={<HairExtenstions />} />
+            <Route path="hair-extensions" element={<HairExtensions />} />
             <Route path="care-collection" element={<CareCollection />} />
             <Route path="care-collection/:slug" element={<Detail />} />
             <Route path="partner-salons" element={<PartnerSalons />} />

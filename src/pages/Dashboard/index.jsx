@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 // API URL
-import { HAIR_EXTENSTIONS_COLLECTIONS_URL, POPULATE_URL } from "../../services/API";
+import { HAIR_EXTENSIONS_COLLECTIONS_URL, POPULATE_URL } from "../../services/API";
 
 // Hooks
 import { useFetch } from "../../hooks/useFetch";
@@ -15,7 +15,7 @@ import ResponsiveImage from "../../components/common/ResponsiveImage";
 // Styles
 import { Section, ListContainer, Card, Link } from "./index.styled";
 
-const url = HAIR_EXTENSTIONS_COLLECTIONS_URL + POPULATE_URL;
+const url = HAIR_EXTENSIONS_COLLECTIONS_URL + POPULATE_URL;
 
 export default function Dashboard() {
   const isComponentMounted = useRef(true);

@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 // Components
-import ValidationError from "../../common/Error/ValidationError";
+import ValidationMessage from "../../common/Message/ValidationMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 
 // Styles
@@ -43,54 +43,54 @@ export default function RegisterForm() {
         <Label>
           First Name:
           <Input {...register("firstName")} />
-          {errors.firstName && <ValidationError>{errors.firstName.message}</ValidationError>}
+          {errors.firstName && <ValidationMessage>{errors.firstName.message}</ValidationMessage>}
         </Label>
         <Label>
           Last name:
           <Input {...register("lastName")} />
-          {errors.lastName && <ValidationError>{errors.lastName.message}</ValidationError>}
+          {errors.lastName && <ValidationMessage>{errors.lastName.message}</ValidationMessage>}
         </Label>
       </div>
       <div>
         <Label>
           Email:
           <Input {...register("email")} />
-          {errors.email && <ValidationError>{errors.email.message}</ValidationError>}
+          {errors.email && <ValidationMessage>{errors.email.message}</ValidationMessage>}
         </Label>
         <Label>
           Phone number:
           <Input {...register("phoneNumber")} />
-          {errors.phoneNumber && <ValidationError>{errors.phoneNumber.message}</ValidationError>}
+          {errors.phoneNumber && <ValidationMessage>{errors.phoneNumber.message}</ValidationMessage>}
         </Label>
       </div>
       <div>
         <Label>
           Name of your salon:
           <Input {...register("salonName")} />
-          {errors.salonName && <ValidationError>{errors.salonName.message}</ValidationError>}
+          {errors.salonName && <ValidationMessage>{errors.salonName.message}</ValidationMessage>}
         </Label>
         <Label>
           Organization number:
           <Input {...register("orgNumber")} />
-          {errors.orgNumber && <ValidationError>{errors.orgNumber.message}</ValidationError>}
+          {errors.orgNumber && <ValidationMessage>{errors.orgNumber.message}</ValidationMessage>}
         </Label>
       </div>
 
       <Label>
         Address:
         <Input {...register("address")} />
-        {errors.address && <ValidationError>{errors.address.message}</ValidationError>}
+        {errors.address && <ValidationMessage>{errors.address.message}</ValidationMessage>}
       </Label>
       <div>
         <Label>
           Zip code:
           <Input {...register("zipCode")} />
-          {errors.zipCode && <ValidationError>{errors.zipCode.message}</ValidationError>}
+          {errors.zipCode && <ValidationMessage>{errors.zipCode.message}</ValidationMessage>}
         </Label>
         <Label>
           City:
           <Input {...register("city")} />
-          {errors.city && <ValidationError>{errors.city.message}</ValidationError>}
+          {errors.city && <ValidationMessage>{errors.city.message}</ValidationMessage>}
         </Label>
       </div>
 

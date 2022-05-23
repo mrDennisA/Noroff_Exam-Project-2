@@ -5,13 +5,13 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 // API
-import { HAIR_EXTENSTIONS_COLORS_URL } from "../../../services/API";
+import { HAIR_EXTENSIONS_COLORS_URL } from "../../../services/API";
 
 // Hooks
 import useAxios from "../../../hooks/useAxios";
 
 // Components
-import ValidationError from "../../common/Error/ValidationError";
+import ValidationMessage from "../../common/Message/ValidationMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import Dropdown from "../common/Dropdown";
 import MediaDropdown from "../common/MediaDropdown";
@@ -70,27 +70,27 @@ export default function AddForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {serverError && <ValidationError>{serverError}</ValidationError>}
+      {serverError && <ValidationMessage>{serverError}</ValidationMessage>}
       <fieldset disabled={submitting}>
         <Label>
           Title:
           <Input {...register("title")} />
-          {errors.title && <ValidationError>{errors.title.message}</ValidationError>}
+          {errors.title && <ValidationMessage>{errors.title.message}</ValidationMessage>}
         </Label>
         <Label>
           Description:
           <Textarea {...register("description")} />
-          {errors.description && <ValidationError>{errors.description.message}</ValidationError>}
+          {errors.description && <ValidationMessage>{errors.description.message}</ValidationMessage>}
         </Label>
         <Label>
           Select Cover:
           <MediaDropdown register={register} />
-          {errors.cover && <ValidationError>{errors.cover.message}</ValidationError>}
+          {errors.cover && <ValidationMessage>{errors.cover.message}</ValidationMessage>}
         </Label>
         <Label>
           Select Color:
-          <Dropdown register={register} registerName={"color"} url={HAIR_EXTENSTIONS_COLORS_URL} />
-          {errors.color && <ValidationError>{errors.color.message}</ValidationError>}
+          <Dropdown register={register} registerName={"color"} url={HAIR_EXTENSIONS_COLORS_URL} />
+          {errors.color && <ValidationMessage>{errors.color.message}</ValidationMessage>}
         </Label>
         <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Submitting..." : "Submit"}</ButtonSubmit>
       </fieldset>

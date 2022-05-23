@@ -6,6 +6,6 @@ const Message = styled.span`
   font-weight: 300;
 `;
 
-export default function ValidationError({ children }) {
+export default function ValidationMessage({ children }) {
   return <Message>{children}</Message>;
 }

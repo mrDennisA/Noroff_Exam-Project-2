@@ -11,7 +11,7 @@ export default function FooterMenu() {
       <Line />
       <SubMenu className="submenu">
         <div>
-          <Link to="hair-extenstions">Master Hair Extenstions</Link>
+          <Link to="hair-extensions">Master Hair Extensions</Link>
           <Link to="care-collection">Care Collection</Link>
         </div>
         <SubLine />

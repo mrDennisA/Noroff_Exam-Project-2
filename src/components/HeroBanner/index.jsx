@@ -48,7 +48,7 @@ export default function HeroBanner({ data, onClick }) {
           <Hero key={item.id} dimensions={windowSize.height}>
             <MediaContainer>
               <ResponsiveImage data={cover} />
-              {/* <iframe
+              <iframe
                 src="https://player.vimeo.com/video/691752226?h=6771f74db7&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;transparent=&amp;background=1&amp;app_id=122963"
                 frameBorder={0}
                 webkitallowfullscreen="true"
@@ -56,7 +56,7 @@ export default function HeroBanner({ data, onClick }) {
                 allowFullScreen
                 title="Voke-Alle_02"
                 data-ready={true}
-              ></iframe> */}
+              ></iframe>
             </MediaContainer>
             <HeadingContainer>
               <Heading>{title}</Heading>

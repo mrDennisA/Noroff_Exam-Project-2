@@ -9,9 +9,9 @@ export const HEADER_URL = BASE_URL + "/header";
 
 export const HOME_PAGE_URL = BASE_URL + "/home-page";
 
-export const HAIR_EXTENSTIONS_PAGE_URL = BASE_URL + "/hair-extenstions-page";
-export const HAIR_EXTENSTIONS_COLORS_URL = BASE_URL + "/hair-extenstions-colors";
-export const HAIR_EXTENSTIONS_COLLECTIONS_URL = BASE_URL + "/hair-extenstions-collections";
+export const HAIR_EXTENSIONS_PAGE_URL = BASE_URL + "/hair-extenstions-page";
+export const HAIR_EXTENSIONS_COLORS_URL = BASE_URL + "/hair-extenstions-colors";
+export const HAIR_EXTENSIONS_COLLECTIONS_URL = BASE_URL + "/hair-extenstions-collections";
 
 export const CARE_COLLECTION_PAGE_URL = BASE_URL + "/care-collection-page";
 export const CARE_COLLECTION_URL = BASE_URL + "/care-collections";
