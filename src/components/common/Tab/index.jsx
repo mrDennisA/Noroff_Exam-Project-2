@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Container, Tabs, Tab, Info } from "./index.styled";
 
 // https://react.school/ui/tabs ex.
-export default function TabGroup({ data }) {
-  const [tab, setTab] = useState(data[0]);
+export default function TabGroup(props) {
+  const [tab, setTab] = useState(props.data[0]);
   // console.log(tab);
 
   return (
     <Container>
       <Tabs>
-        {data.map((item) => {
+        {props.data.map((item) => {
           const { id, title } = item;
 
           return (

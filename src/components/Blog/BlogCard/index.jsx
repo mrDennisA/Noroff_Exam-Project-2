@@ -5,13 +5,12 @@ import ResponsiveImage from "../../common/ResponsiveImage";
 // Styles
 import { Card, Info } from "./index.styled";
 
-export default function BlogPostCard({ data }) {
+export default function BlogCard(props) {
   return (
     <>
-      {data.map((item) => {
+      {props.data.map((item) => {
         // console.log(item);
-        const title = item.attributes.title;
-        const slug = item.attributes.slug;
+        const { title, slug } = item.attributes;
         const description = item.attributes.description.substring(0, 64) + "...";
 
         return (

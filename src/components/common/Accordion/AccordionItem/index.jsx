@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 // Componenets
 import Heading from "../../Heading";
@@ -9,21 +9,10 @@ import { Title, Content } from "./index.styled";
 
 export default function AccordionItem({ data }) {
   const [isActive, setIsActive] = useState(false);
-  const [dimensions, setDimensions] = useState(0);
-  const contentHeight = useRef();
-
   const { title, content } = data;
 
   function handleChange() {
     setIsActive(!isActive);
-
-    setDimensions(contentHeight.current.scrollHeight + 16);
-
-    window.addEventListener("resize", () => {
-      setTimeout(() => {
-        setDimensions(contentHeight.current.scrollHeight + 16);
-      }, 20);
-    });
   }
 
   return (
@@ -34,9 +23,7 @@ export default function AccordionItem({ data }) {
         </Heading>
         <div className={isActive ? "active" : ""}>{ARROW_ICON}</div>
       </Title>
-      <Content ref={contentHeight} isActive={isActive} height={isActive ? dimensions : 0}>
-        {content}
-      </Content>
+      <Content className={isActive ? "" : "closed"}>{content}</Content>
     </div>
   );
 }

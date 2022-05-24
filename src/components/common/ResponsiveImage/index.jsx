@@ -1,5 +1,5 @@
-export default function ResponsiveImage({ data }) {
-  const { thumbnail, small, medium, large } = data.formats;
+export default function ResponsiveImage(props) {
+  const { thumbnail, small, medium, large } = props.data.formats;
   // console.log(data);
 
   return (
@@ -9,10 +9,10 @@ export default function ResponsiveImage({ data }) {
       ${small ? small.url + " " + small.width + "w," : ""}
       ${medium ? medium.url + " " + medium.width + "w," : ""}
       ${large ? large.url + " " + large.width + "w," : ""}
-      ${data.url + " " + data.width + "w,"}
+      ${props.data.url + " " + props.data.width + "w,"}
       `}
-      src={data.url}
-      alt={data.alternativeText}
+      src={props.data.url}
+      alt={props.data.alternativeText}
     />
   );
 }

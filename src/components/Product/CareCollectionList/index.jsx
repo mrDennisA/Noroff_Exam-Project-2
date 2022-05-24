@@ -5,7 +5,7 @@ import ProductCard from "../ProductCard";
 // Styles
 import { Section, GridContainer, Grid } from "../List.styled";
 
-export default function HairExtenstionsList({ data }) {
+export default function HairExtenstionsList(props) {
   return (
     <div className="container">
       <div className="wrapper">
@@ -13,7 +13,7 @@ export default function HairExtenstionsList({ data }) {
           <GridContainer>
             <Heading element="h2">Our Collection</Heading>
             <Grid>
-              <ProductCard data={data.data} link={true} />
+              <ProductCard data={props.data.data} link={true} />
             </Grid>
           </GridContainer>
         </Section>

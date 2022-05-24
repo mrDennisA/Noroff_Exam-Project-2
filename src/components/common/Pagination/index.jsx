@@ -1,9 +1,9 @@
 import { Container } from "./index.styled";
 
-export default function Pagination({ data }) {
+export default function Pagination(props) {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(data.totalItems / data.itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(props.data.totalItems / props.data.itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -12,7 +12,7 @@ export default function Pagination({ data }) {
       <ul>
         {pageNumbers.map((number) => (
           <li key={number}>
-            <button onClick={() => data.paginate(number)} className={data.currentPage === number ? "active" : ""}>
+            <button onClick={() => props.data.paginate(number)} className={props.data.currentPage === number ? "active" : ""}>
               <span>{number}</span>
             </button>
           </li>

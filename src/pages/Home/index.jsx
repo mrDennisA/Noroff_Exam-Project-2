@@ -46,6 +46,7 @@ export default function Home() {
 
   function RenderPage() {
     const { herobanner, article } = data.data.attributes;
+
     return (
       <>
         <Head title="Voke Hair – Hair Extensions" keywords="" description="" />
@@ -53,7 +54,7 @@ export default function Home() {
         <Wrapper ref={firstArticle}>
           <Article data={article} />
         </Wrapper>
-        <BlogList data={dataBlog} />
+        <BlogList data={dataBlog.data} />
       </>
     );
   }

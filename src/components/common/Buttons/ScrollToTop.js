@@ -9,13 +9,16 @@ export default function ScrollToTop() {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const scroll = () => {
       if (window.scrollY > 1000) {
         setShowTopBtn(true);
       } else {
         setShowTopBtn(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", scroll);
+    return () => window.removeEventListener("scroll", scroll);
   }, []);
 
   const scrollToTop = () => {

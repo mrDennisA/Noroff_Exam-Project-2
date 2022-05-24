@@ -9,10 +9,10 @@ import ResponsiveImage from "../common/ResponsiveImage";
 // Styles
 import { Section, Article, RichText } from "./index.styled";
 
-export default function ArticleComp({ data }) {
+export default function ArticleComp(props) {
   return (
     <Section>
-      {data.map((item) => {
+      {props.data.map((item) => {
         const { id, title, text, pageLink, imageDirections, imagePercent, heading } = item;
         // console.log(item);
 

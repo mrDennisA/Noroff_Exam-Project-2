@@ -12,10 +12,8 @@ export default function ArticleIngredients(props) {
       <Article>
         {props.data.map((item) => {
           // console.log(item);
-          const id = item.id;
+          const { id, title, description } = item;
           const cover = item.cover.data.attributes;
-          const title = item.title;
-          const description = item.description;
 
           return (
             <Ingredient key={id}>

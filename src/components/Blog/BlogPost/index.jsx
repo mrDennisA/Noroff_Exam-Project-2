@@ -28,10 +28,7 @@ export default function BlogPost() {
   }
 
   function RenderPage() {
-    // console.log(data.data);
-    const title = data.data.attributes.title;
-    const desciption = data.data.attributes.description;
-    const richText = data.data.attributes.richText;
+    const { title, desciption, richText } = data.data.attributes;
 
     const ReactMarkdownComponents = {
       p: ({ node, children }) => {

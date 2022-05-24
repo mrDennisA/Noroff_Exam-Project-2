@@ -28,7 +28,7 @@ const schema = yup.object().shape({
   // }),
 });
 
-export default function EditForm({ data, id }) {
+export default function EditForm(props) {
   const [submitting, setSubmitting] = useState(false);
   const [respons, setRespons] = useState(null);
 
@@ -53,7 +53,7 @@ export default function EditForm({ data, id }) {
     };
 
     try {
-      const response = await http.put(`/hair-extenstions-collections/${id}`, { data: dataArray });
+      const response = await http.put(`/hair-extenstions-collections/${props.id}`, { data: dataArray });
       console.log("response", response.data);
       setRespons({ message: "Product Updated Successfully", validation: "success" });
     } catch (error) {
@@ -64,9 +64,9 @@ export default function EditForm({ data, id }) {
     }
   }
 
-  const { title, info } = data;
-  const coverID = data.cover.data[0].id;
-  const colorID = data.filter.data.id;
+  const { title, info } = props.data;
+  const coverID = props.data.cover.data[0].id;
+  const colorID = props.data.filter.data.id;
 
   return (
     <>

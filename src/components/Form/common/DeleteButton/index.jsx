@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../../../../hooks/useAxios";
 
-export default function DeleteButton({ id }) {
+export default function DeleteButton(props) {
   const [serverError, setServerError] = useState(null);
 
   const navigate = useNavigate();
   const http = useAxios();
 
-  const url = `/hair-extenstions-collections/${id}`;
+  const url = `/hair-extenstions-collections/${props.id}`;
 
   async function handleDelete() {
     try {

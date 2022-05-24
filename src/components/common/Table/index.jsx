@@ -1,7 +1,7 @@
 import { Table, Thead, Tbody, Tr, Th, Td } from "./index.styled";
 
-export function TableContainer({ children }) {
-  return <Table>{children}</Table>;
+export function TableContainer(props) {
+  return <Table>{props.children}</Table>;
 }
 
 export function TableHead({ data }) {

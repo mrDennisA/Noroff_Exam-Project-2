@@ -55,6 +55,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="faq" element={<FAQ />} />
 
+            {/* Admin start*/}
             <Route path="login" element={<Login />} />
             <Route
               path="dashboard"
@@ -80,6 +81,7 @@ function App() {
                 </Protected>
               }
             />
+            {/* Admin end*/}
           </Routes>
         </Main>
       </div>
