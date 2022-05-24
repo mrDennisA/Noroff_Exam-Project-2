@@ -43,8 +43,8 @@ export default function ModalImage(props) {
         {props.data.attributes ? <ResponsiveImage data={data} /> : <img src={data.src} alt={data.alt} />}
       </button>
       {displayModal && (
-        <Modal>
-          <Content>
+        <Modal onClick={displayToggle}>
+          <Content onClick={(e) => e.stopPropagation()}>
             <div>{props.data.attributes ? <ResponsiveImage data={modalData} /> : <img src={modalData.src} alt={modalData.alt} />}</div>
             <div>
               <button onClick={displayToggle}>{BARCLOSED_ICON}</button>

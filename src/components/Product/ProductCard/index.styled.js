@@ -29,31 +29,13 @@ export const Card = styled.div`
   & > div,
   a {
     display: grid;
-
+    width: 100%;
     grid-template-rows: auto 1fr;
     background-color: var(--white);
     overflow: hidden;
     border-radius: var(--radius);
     box-shadow: 0 4px 8px var(--shadow);
-  }
 
-  img {
-    max-height: 400px;
-    object-fit: contain;
-  }
-
-  h4 {
-    font-family: var(--fontCard);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: var(--darkBrown);
-
-    transition: color var(--timer) ease;
-  }
-
-  a {
     transition: var(--timer) ease;
   }
 
@@ -67,10 +49,29 @@ export const Card = styled.div`
   }
 `;
 
+export const Media = styled.div`
+  img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+`;
+
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h4 {
+    font-family: var(--fontCard);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--darkBrown);
+    text-align: unset;
+
+    transition: color var(--timer) ease;
+  }
 
   & > div {
     display: grid;
