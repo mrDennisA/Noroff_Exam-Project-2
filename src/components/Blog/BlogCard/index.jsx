@@ -19,7 +19,7 @@ export default function BlogCard(props) {
             <Info>
               <Heading element="h3">{title}</Heading>
               <p>{description}</p>
-              <ButtonBlog to={`${slug}`}>read more</ButtonBlog>
+              <ButtonBlog to={slug}>read more</ButtonBlog>
             </Info>
           </Card>
         );

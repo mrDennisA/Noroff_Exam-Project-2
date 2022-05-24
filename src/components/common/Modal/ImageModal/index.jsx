@@ -29,7 +29,6 @@ export default function ModalImage(props) {
   });
 
   // Define data path
-  console.log(props.data);
   const data = props.data.attributes ? props.data.attributes : props.data.properties;
 
   return (

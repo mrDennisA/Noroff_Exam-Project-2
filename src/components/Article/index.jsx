@@ -23,7 +23,7 @@ export default function ArticleComp(props) {
               <RichText>
                 <ReactMarkdown>{text}</ReactMarkdown>
               </RichText>
-              {pageLink.data ? <ButtonCTA to={pageLink.data.attributes.slug}>Learn more</ButtonCTA> : ""}
+              {pageLink.data ? <ButtonCTA to={pageLink.data.attributes.slug}>Learn more</ButtonCTA> : null}
             </div>
             <div className={item.imagegroup.length > 1 ? imagePercent + " carousel" : imagePercent}>
               {item.imagegroup.length > 1 ? (

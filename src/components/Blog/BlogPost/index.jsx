@@ -28,7 +28,7 @@ export default function BlogPost() {
   }
 
   function RenderPage() {
-    const { title, desciption, richText } = data.data.attributes;
+    const { title, description, richText } = data.data.attributes;
 
     const ReactMarkdownComponents = {
       p: ({ node, children }) => {
@@ -46,7 +46,7 @@ export default function BlogPost() {
         <div className="wrapper">
           <Section>
             <Heading>{title}</Heading>
-            <strong>{desciption}</strong>
+            <strong>{description}</strong>
             <ReactMarkdown components={ReactMarkdownComponents}>{richText}</ReactMarkdown>
           </Section>
         </div>
