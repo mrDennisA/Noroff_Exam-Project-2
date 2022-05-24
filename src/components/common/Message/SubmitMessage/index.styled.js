@@ -4,13 +4,14 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translate(-50%, calc(-100% - 1rem));
+  transform: translate(-50%, -100%);
+
   margin-top: 0.5rem;
   padding: 0.5rem;
   border-radius: var(--radius);
   box-shadow: 0 4px 8px var(--shadow);
   max-width: 400px;
-  width: 100%;
+  width: calc(100% - 1rem);
 
   opacity: 0;
 
@@ -18,7 +19,7 @@ export const Container = styled.div`
 
   &.active {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0%);
   }
 
   &.success {

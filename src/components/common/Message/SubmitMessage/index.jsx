@@ -9,6 +9,7 @@ import { BARCLOSED_ICON } from "../../Icons";
 export default function SubmitMessage(props) {
   const [delay, setDelay] = useState(false);
   const timeoutRef = useRef(null);
+
   const start = 100;
   const { transition = 200, timer = 4000 } = props;
   // console.log(props);
