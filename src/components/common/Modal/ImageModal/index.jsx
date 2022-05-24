@@ -25,11 +25,11 @@ export default function ModalImage(props) {
 
   useEffect(() => {
     document.body.addEventListener("keydown", closeOnKey);
-    return () => {
-      document.body.removeEventListener("keydown", closeOnKey);
-    };
+    return () => document.body.removeEventListener("keydown", closeOnKey);
   });
 
+  // Define data path
+  console.log(props.data);
   const data = props.data.attributes ? props.data.attributes : props.data.properties;
 
   return (
