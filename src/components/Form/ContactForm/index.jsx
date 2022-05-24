@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -10,8 +10,6 @@ import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 
 // Styles
 import { Form, Label, Input, Textarea } from "../Form.styled";
-import { useEffect, useState } from "react";
-
 // Error text
 const schema = yup.object().shape({
   name: yup.string().required("Please enter your Name").min(3, "Minimum of 3 characters"),
@@ -23,10 +21,6 @@ const schema = yup.object().shape({
 export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [respons, setRespons] = useState(null);
-  const timeout = useRef(null);
-
-  const timer = 210;
-  const delay = 4000;
 
   const {
     register,
@@ -37,34 +31,26 @@ export default function ContactForm() {
 
   function onSubmit(data) {
     setSubmitting(true);
+    setRespons(null);
 
-    try {
-      console.log("data", data);
-    } catch (error) {
-      setRespons({ message: "Something Went Wrong, Please Try Again Later", validation: "error" });
-      console.log("error", error);
-    } finally {
-      // Timer is set as an dalyed exemple of post respons
-      setTimeout(() => {
+    // Timer is set as an dalyed exemple of post respons
+    setTimeout(() => {
+      try {
+        console.log("data", data);
         setRespons({ message: "Contact Request Submitted Successfully", validation: "success" });
+      } catch (error) {
+        console.log("error", error);
+        setRespons({ message: "Something Went Wrong, Please Try Again Later", validation: "error" });
+      } finally {
         setSubmitting(false);
         reset();
-      }, 1000);
-    }
+      }
+    }, 1000);
   }
-
-  useEffect(() => {
-    if (respons) {
-      timeout.respons = setTimeout(() => {
-        setRespons(null);
-      }, delay + timer);
-      return () => timeout.respons && clearTimeout(timeout.respons);
-    }
-  }, [respons]);
 
   return (
     <>
-      <SubmitMessage onClick={() => setRespons(null)} respons={respons} timer={timer} delay={delay} />
+      <SubmitMessage onClick={() => setRespons(null)} respons={respons} />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <fieldset disabled={submitting}>
           <Label>

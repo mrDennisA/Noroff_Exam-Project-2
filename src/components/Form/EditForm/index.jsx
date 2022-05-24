@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 import useAxios from "../../../hooks/useAxios";
 
 import { useForm } from "react-hook-form";
@@ -7,17 +6,14 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 // API
-import { HAIR_EXTENSIONS_COLLECTIONS_URL, HAIR_EXTENSIONS_COLORS_URL, POPULATE_URL } from "../../../services/API";
-
-// Hooks
-import { useFetch } from "../../../hooks/useFetch";
+import { HAIR_EXTENSIONS_COLORS_URL } from "../../../services/API";
 
 // Components
 import ValidationMessage from "../../common/Message/ValidationMessage";
+import SubmitMessage from "../../common/Message/SubmitMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import Dropdown from "../common/Dropdown";
 import MediaDropdown from "../common/MediaDropdown";
-import DeleteButton from "../common/DeleteButton";
 
 // Styles
 import { Form, Label, Input, Textarea } from "../Form.styled";
@@ -32,15 +28,9 @@ const schema = yup.object().shape({
   // }),
 });
 
-export default function EditForm() {
-  const { id } = useParams();
-  const url = HAIR_EXTENSIONS_COLLECTIONS_URL + "/" + id + POPULATE_URL;
-
-  const isComponentMounted = useRef(true);
-  const { data, loading, error } = useFetch(url, isComponentMounted, []);
-
+export default function EditForm({ data, id }) {
   const [submitting, setSubmitting] = useState(false);
-  const [serverError, setServerError] = useState(null);
+  const [respons, setRespons] = useState(null);
 
   const http = useAxios();
 
@@ -52,9 +42,7 @@ export default function EditForm() {
 
   async function onSubmit(data) {
     setSubmitting(true);
-    setServerError(null);
-
-    // console.log(data);
+    setRespons(null);
 
     const dataArray = {
       title: data.title,
@@ -67,27 +55,23 @@ export default function EditForm() {
     try {
       const response = await http.put(`/hair-extenstions-collections/${id}`, { data: dataArray });
       console.log("response", response.data);
+      setRespons({ message: "Product Updated Successfully", validation: "success" });
     } catch (error) {
       console.log("error", error);
-      setServerError(error.toString());
+      setRespons({ message: "Something Went Wrong, Please Try Again Later", validation: "error" });
     } finally {
       setSubmitting(false);
     }
   }
 
-  if (error) {
-    console.log(error);
-  }
+  const { title, info } = data;
+  const coverID = data.cover.data[0].id;
+  const colorID = data.filter.data.id;
 
-  if (!loading) {
-    const title = data.data.attributes.title;
-    const info = data.data.attributes.info;
-    const coverID = data.data.attributes.cover.data[0].id;
-    const colorID = data.data.attributes.filter.data.id;
-
-    return (
+  return (
+    <>
+      <SubmitMessage onClick={() => setRespons(null)} respons={respons} />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {serverError && <ValidationMessage>{serverError}</ValidationMessage>}
         <fieldset disabled={submitting}>
           <Label>
             Title:
@@ -110,9 +94,8 @@ export default function EditForm() {
             {errors.color && <ValidationMessage>{errors.color.message}</ValidationMessage>}
           </Label>
           <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Submitting..." : "Submit"}</ButtonSubmit>
-          <DeleteButton id={id} />
         </fieldset>
       </Form>
-    );
-  }
+    </>
+  );
 }

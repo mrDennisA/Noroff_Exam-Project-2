@@ -12,6 +12,7 @@ import useAxios from "../../../hooks/useAxios";
 
 // Components
 import ValidationMessage from "../../common/Message/ValidationMessage";
+import SubmitMessage from "../../common/Message/SubmitMessage";
 import ButtonSubmit from "../../common/Buttons/ButtonSubmit";
 import Dropdown from "../common/Dropdown";
 import MediaDropdown from "../common/MediaDropdown";
@@ -31,7 +32,7 @@ const schema = yup.object().shape({
 
 export default function AddForm() {
   const [submitting, setSubmitting] = useState(false);
-  const [serverError, setServerError] = useState(null);
+  const [respons, setRespons] = useState(null);
 
   const navigate = useNavigate();
   const http = useAxios();
@@ -44,8 +45,7 @@ export default function AddForm() {
 
   async function onSubmit(data) {
     setSubmitting(true);
-    setServerError(null);
-
+    setRespons(null);
     // console.log(data);
 
     const dataArray = {
@@ -59,41 +59,45 @@ export default function AddForm() {
     try {
       const response = await http.post("/hair-extenstions-collections", { data: dataArray });
       console.log("response", response.data);
+
+      // setRespons({ message: "Product Created Successfully", validation: "success" });
       navigate("/dashboard", { replace: true });
     } catch (error) {
       console.log("error", error);
-      setServerError(error.toString());
+      setRespons({ message: "Something Went Wrong, Please Try Again Later", validation: "error" });
     } finally {
       setSubmitting(false);
     }
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      {serverError && <ValidationMessage>{serverError}</ValidationMessage>}
-      <fieldset disabled={submitting}>
-        <Label>
-          Title:
-          <Input {...register("title")} />
-          {errors.title && <ValidationMessage>{errors.title.message}</ValidationMessage>}
-        </Label>
-        <Label>
-          Description:
-          <Textarea {...register("description")} />
-          {errors.description && <ValidationMessage>{errors.description.message}</ValidationMessage>}
-        </Label>
-        <Label>
-          Select Cover:
-          <MediaDropdown register={register} />
-          {errors.cover && <ValidationMessage>{errors.cover.message}</ValidationMessage>}
-        </Label>
-        <Label>
-          Select Color:
-          <Dropdown register={register} registerName={"color"} url={HAIR_EXTENSIONS_COLORS_URL} />
-          {errors.color && <ValidationMessage>{errors.color.message}</ValidationMessage>}
-        </Label>
-        <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Submitting..." : "Submit"}</ButtonSubmit>
-      </fieldset>
-    </Form>
+    <>
+      <SubmitMessage onClick={() => setRespons(null)} respons={respons} />
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <fieldset disabled={submitting}>
+          <Label>
+            Title:
+            <Input {...register("title")} />
+            {errors.title && <ValidationMessage>{errors.title.message}</ValidationMessage>}
+          </Label>
+          <Label>
+            Description:
+            <Textarea {...register("description")} />
+            {errors.description && <ValidationMessage>{errors.description.message}</ValidationMessage>}
+          </Label>
+          <Label>
+            Select Cover:
+            <MediaDropdown register={register} />
+            {errors.cover && <ValidationMessage>{errors.cover.message}</ValidationMessage>}
+          </Label>
+          <Label>
+            Select Color:
+            <Dropdown register={register} registerName={"color"} url={HAIR_EXTENSIONS_COLORS_URL} />
+            {errors.color && <ValidationMessage>{errors.color.message}</ValidationMessage>}
+          </Label>
+          <ButtonSubmit className={submitting ? "active" : ""}>{submitting ? "Submitting..." : "Submit"}</ButtonSubmit>
+        </fieldset>
+      </Form>
+    </>
   );
 }

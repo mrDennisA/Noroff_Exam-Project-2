@@ -11,6 +11,7 @@ export const Card = styled.article`
 
   @media only screen and (min-width: 576px) {
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
   }
 
   @media only screen and (min-width: 768px) {

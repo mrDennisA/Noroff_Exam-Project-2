@@ -1,33 +1,60 @@
 import { useState, useEffect, useRef } from "react";
 
+// Hooks
+import useTimeout from "../../../../hooks/useTimeout";
+
 import { Container, Content } from "./index.styled";
 import { BARCLOSED_ICON } from "../../Icons";
 
 export default function SubmitMessage(props) {
   const [delay, setDelay] = useState(false);
-  const timeout = useRef(null);
+  const timeoutRef = useRef(null);
+  const start = 100;
+  const { transition = 200, timer = 4000 } = props;
   // console.log(props);
 
   const close = () => {
     setDelay(false);
-    setTimeout(() => {
+
+    // Delay befor remove
+    timeoutRef.current = setTimeout(() => {
       props.onClick();
-    }, props.timer);
+    }, start + props.timer);
   };
 
   useEffect(() => {
-    if (props.respons) {
-      timeout.delay = setTimeout(() => {
-        setDelay(true);
-      }, 10);
-
-      timeout.delay = setTimeout(() => {
-        setDelay(false);
-      }, props.delay);
-
-      return () => timeout.delay && clearTimeout(timeout.delay);
+    if (!props.respons) {
+      setDelay(false);
     }
+    return () => clearTimeout(timeoutRef.current);
   }, [props]);
+
+  // Delay befor show
+  useTimeout(
+    () => {
+      setDelay(true);
+    },
+    start,
+    props.respons
+  );
+
+  // Delay befor hidden
+  useTimeout(
+    () => {
+      setDelay(false);
+    },
+    start + timer,
+    props.respons
+  );
+
+  // Delay befor remove
+  useTimeout(
+    () => {
+      props.onClick();
+    },
+    start + timer + transition,
+    props.respons
+  );
 
   return (
     <>

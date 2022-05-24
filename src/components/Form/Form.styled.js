@@ -9,20 +9,20 @@ export const Form = styled.form`
   fieldset {
     display: grid;
     gap: 2rem;
+
+    & > div:not(:last-child) {
+      display: grid;
+      gap: 1rem;
+
+      @media only screen and (min-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 
   &.register {
     @media only screen and (min-width: 576px) {
       max-width: 600px;
-    }
-  }
-
-  & > div:not(:last-child) {
-    display: grid;
-    gap: 1rem;
-
-    @media only screen and (min-width: 576px) {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 `;

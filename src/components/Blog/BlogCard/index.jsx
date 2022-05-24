@@ -10,13 +10,12 @@ export default function BlogPostCard({ data }) {
     <>
       {data.map((item) => {
         // console.log(item);
-        const id = item.id;
         const title = item.attributes.title;
         const slug = item.attributes.slug;
         const description = item.attributes.description.substring(0, 64) + "...";
 
         return (
-          <Card key={id}>
+          <Card key={item.id}>
             <ResponsiveImage data={item.attributes.cover.data.attributes} />
             <Info>
               <Heading element="h3">{title}</Heading>
