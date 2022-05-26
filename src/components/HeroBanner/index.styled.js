@@ -10,7 +10,7 @@ export const Hero = styled.div`
   width: 100%;
   /* height: calc(100vh - 88px); */
   height: calc(${(props) => props.dimensions + "px"} - 88px);
-  max-height: 900px;
+  max-height: 1080px;
 
   @media only screen and (min-width: 768px) {
     /* height: calc(100vh - 184px); */
@@ -26,7 +26,6 @@ export const MediaContainer = styled.div`
 
   img {
     position: absolute;
-    object-position: center 33%;
   }
 
   iframe {

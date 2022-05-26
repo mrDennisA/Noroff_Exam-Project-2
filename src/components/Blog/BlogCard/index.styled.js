@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.article`
   display: grid;
-  grid-template-columns: unset;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   background-color: var(--white);
   overflow: hidden;
@@ -15,7 +15,7 @@ export const Card = styled.article`
   }
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: unset;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
 

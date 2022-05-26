@@ -49,25 +49,23 @@ export const Section = styled.section`
 export const ImageContainer = styled.div`
   grid-area: grid01;
 
-  & > button {
+  button {
     display: flex;
     width: 100%;
+  }
 
-    cursor: zoom-in;
+  img {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px var(--shadow);
+    background-color: var(--white);
+    min-height: 400px;
+    max-height: 500px;
+    object-fit: contain;
 
-    img {
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 8px var(--shadow);
-      background-color: var(--white);
-      min-height: 400px;
-      max-height: 500px;
-      object-fit: contain;
-
-      @media only screen and (min-width: 992px) {
-        max-height: 600px;
-        height: 100vh;
-      }
+    @media only screen and (min-width: 992px) {
+      max-height: 600px;
+      height: 100vh;
     }
   }
 `;

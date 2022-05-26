@@ -17,7 +17,7 @@ import Article from "../../components/Article";
 import BlogList from "../../components/Blog/BlogList";
 
 // Functions
-import scrollToElement from "../../utils/ScrollToElement";
+import scrollToElement from "../../services/ScrollToElement";
 
 const url =
   HOME_PAGE_URL +

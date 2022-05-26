@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Button = styled.button`
+  cursor: zoom-in;
+`;
+
 export const Modal = styled.section`
   z-index: 100;
   position: fixed;
@@ -29,16 +33,19 @@ export const Content = styled.div`
   /* Button */
   & > :last-child {
     position: absolute;
-    left: 0;
+    top: 0;
     right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
+    transform: translate(-0.5rem, 0.5rem);
+    border-radius: var(--radius);
     background-color: var(--white50);
 
     button {
       display: flex;
       width: unset;
+
+      padding: 0.5rem;
+      margin: -0.5rem;
+      cursor: pointer;
     }
   }
 `;
