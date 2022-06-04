@@ -5,7 +5,7 @@ import ResponsiveImage from "../../ResponsiveImage";
 import { BARCLOSED_ICON } from "../../Icons";
 
 // Styles
-import { Modal, Content } from "./index.styled";
+import { Button, Modal, Content } from "./index.styled";
 
 export default function ModalImage(props) {
   const [displayModal, setDisplayModal] = useState(false);
@@ -33,14 +33,14 @@ export default function ModalImage(props) {
 
   return (
     <>
-      <button
+      <Button
         onClick={() => {
           displayToggle();
           setModalData(data);
         }}
       >
         {props.data.attributes ? <ResponsiveImage data={data} /> : <img src={data.src} alt={data.alt} />}
-      </button>
+      </Button>
       {displayModal && (
         <Modal onClick={displayToggle}>
           <Content onClick={(e) => e.stopPropagation()}>

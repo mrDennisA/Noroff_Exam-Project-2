@@ -6,7 +6,7 @@ import { Link, Img } from "./index.styled";
 export default function Logo() {
   return (
     <Link to="/">
-      <Img src={VokeLogo} alt="" />
+      <Img src={VokeLogo} alt="Voke Hair Logo" />
     </Link>
   );
 }

@@ -21,7 +21,7 @@ export default function MediaDropdown(props) {
   }, [data, defaultValue, loading]);
 
   const onChange = (item) => {
-    console.log(item);
+    // console.log(item);
     data.filter((image) => parseFloat(item.target.value) === image.id && setDisplay(image));
   };
 

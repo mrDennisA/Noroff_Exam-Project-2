@@ -14,7 +14,7 @@ import Heading from "../../common/Heading";
 import ModalImage from "../../common/Modal/ImageModal";
 
 // Styles
-import { Section } from "./index.styled";
+import { Section, MediaContainer } from "./index.styled";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -33,7 +33,7 @@ export default function BlogPost() {
     const ReactMarkdownComponents = {
       p: ({ node, children }) => {
         if (node.children[0].tagName === "img") {
-          return <div>{node.children.map((item, index) => item.tagName === "img" && <ModalImage key={index} data={item} />)}</div>;
+          return <MediaContainer>{node.children.map((item, index) => item.tagName === "img" && <ModalImage key={index} data={item} />)}</MediaContainer>;
         }
 
         // Return default child if it's not an image

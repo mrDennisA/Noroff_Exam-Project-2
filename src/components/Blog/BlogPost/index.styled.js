@@ -33,3 +33,10 @@ export const Section = styled.section`
     }
   }
 `;
+
+export const MediaContainer = styled.div`
+  img {
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+`;

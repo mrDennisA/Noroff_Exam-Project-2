@@ -37,7 +37,7 @@ export const Content = styled.div`
     right: 0;
     transform: translate(-0.5rem, 0.5rem);
     border-radius: var(--radius);
-    background-color: var(--white50);
+    background-color: var(--white25);
 
     button {
       display: flex;
