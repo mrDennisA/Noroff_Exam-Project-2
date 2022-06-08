@@ -1,7 +1,5 @@
-# Your project title
+# Voke Hair
 ![vokehair](https://user-images.githubusercontent.com/3404304/172705314-b3d7943e-1741-42d2-8043-447972c43f66.jpg)
-
-Voke Hair website.
 
 ## Description
 Project Exam 2: Making a website for a real world client. React for front-ned, Strapi for back-end.
