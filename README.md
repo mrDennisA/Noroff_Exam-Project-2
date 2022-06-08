@@ -1,105 +1,70 @@
-# Project Exam 2
+# Your project title
 
-There are two options with this Project Exam.
-You need to only choose one and please follow the deliveries carefully.
+![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
-## Goal
+A simple overview of the use/purpose of the project.
 
-To take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate's general development capabilities, in addition to visual and technical skills.
+## Description
 
-## Brief
+Add a more detailed description of what your project entails and set out to do.
 
-For this assignment you have the choice between getting a real world client that you will manage and build a website for, or a case study to make a hotel booking website.
+You can add some bullet points if you'd like to:
 
-Whatever project you choose, the final submission must have the following:
+- List item 1
+- List item 2
+- List item 3
 
-- A Gantt chart planning the project
-- A style guide
-- An Adobe XD prototype
-- Use a CSS Pre-processor and BEM if not using CSS Modules, Styled Components, etc
-- Use a React.js or Next.js
-- You can use regular JS or TypeScript
-- Please use create-react-app or create-next-app to generate a skeleton project for yourself
-- A fully working website that fulfils the brief
+## Built With
 
-## Option 1: Real World Client
+You can list a the tech stack that you've used over here
 
-Make a website or application for a real world client. The project should offer a significant enough scope to be able to show off your skills as a developer, and hopefully the project can form a central part of your portfolio for when you start applying for jobs.
+- [React.js](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com)
 
-The process followed for the project will differ depending on the client and the requirements of their project.
+## Getting Started
 
-Note: The project has to have a big enough scope to show off the skills learned over your studies. An example of the level we’re expecting would be a website where administrators can add, update, remove products, and users can search, filter, and contact administrators. If you are unsure if your potential client’s brief is strong enough for the Project Exam 2, please message your tutors. Use of a JavaScript Framework is a requirement.
+### Installing
 
-### Recommended Process
+This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
 
-Week 1 to 3: Finding client, Planning and Design
-Week 4 to 6: Coding
-Week 7: Bug Fixing
+1. Clone the repo:
 
-### Level 1 Process
+```bash
+git clone git@github.com:NoroffFEU/portfolio-1-example.git
+```
 
-- Use your networks and connections to find a client that needs a website or application built.
-- Understand their requirements and come up with a functional specification for the project. You can write the functional specification using “System shall” statements. For example, “The system shall allow visitors to search for an article”
-- Create a Gantt chart for the project, planning out your deliverables for the client.
-- Make a design style guide and then take this style guide and create an Adobe XD prototype. Present to the client for feedback.
-- Develop the site ensuring you deliver all that is listed in your functional specification.
-- Test the website on various platforms and browsers. Ensure the site is bug-free and working before presenting to the client.
-- Go through a final round of changes before going live with the website.
-- Write a report on your process and decisions for the project. Please use the report template provided.
+2. Install the dependencies:
 
-### Submission
+```
+npm install
+```
 
-End of week 3: Functional specification, Gantt chart, style guide, and Adobe XD prototype
-End of week 7: Report with link to website, and all files in a compressed ZIP
+### Running
 
-## Option 2: Hotel Booking Website
+Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
 
-A local tourism agency in Bergen is launching a new website called ‘Holidaze’ for visitors to the area to be able to find hotels, B&Bs and guesthouses, and for the accommodation owners to receive enquiries.
+To run the app, run the following commands:
 
-The project requires you to create the visitor side of the website where users can search accommodation and make enquiries, as well as the administration side where properties can be added and enquiries managed.
+```bash
+npm run start
+```
 
-You will need to create an API to store the data for the establishments, enquiries and contact submissions. You can choose to use WordPress or Strapi as a Headless CMS, but it is very important that the API is deployed and publicly available. Please do not submit any files for your API. Only submit the website you have created.
+## Contributing
 
-## Requirements for the Website
+Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
 
-### Visitor Side
+## Contact
 
-- Homepage
-- Search bar typeahead (auto dropdown with hotel names that match what has been typed)
-- A results page with all hotels
-- The hotel specific page which displays all details about the hotel
-- An enquiry page either modal or separate page
-- A contact page (different to enquiry page) which goes to the admin for Holidaze
+This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
-### Admin side
+[My Twitter page](www.twitter.com)
 
-- Create a login section that makes use of JWT tokens
-- List of enquiries and new enquiries appear when user submits the form on the enquiry page
-- List of messages from contact form
-- The admin can create a new establishment
+[My LinkedIn page](www.linkedin.com)
 
-### Recommended Process
+## License
 
-Week 1 and 2: Planning and Design
-Week 3 to 6: Coding
-Week 7: Bug Fixing
+You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
 
-### Level 1 Process
+## Acknowledgments
 
-- Start by planning out the project.
-- Next begin your research of likely users and browse competitor websites for ideas.
-- Create a style guide
-- Build an Adobe XD prototype (or you can use Sketch or Figma).
-- Start coding.
-- Once you’ve finished development, start looking for bugs and ensure the site functions well on all viewports. Test the code on different devices. Because your API is public, the code shouldn’t rely on a local API.
-- Refactor your code.
-- Ask another student to look over your code and ask them if they can see how it might be better implemented. This is important to get an outside view on your code. Please attach this feedback to your report.
-- Add the login details for your admin side at the top of this README.md file so that it's easy for the marker to spot.
-
-### Submission
-
-End of week 7: Report with link to website or a Github link and feedback from code review, and all files in a compressed ZIP. Login details added to the README.md.
-
-### Resources
-
-Report template included in the repo.
+This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
