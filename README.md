@@ -13,7 +13,7 @@ Voke Hair is an information website for Voke Hair brand products and new launche
 You can list a the tech stack that you've used over here
 
 - [React.js](https://reactjs.org/)
-- [Strapi](https://strapi.io/)
+- [Strapi.io](https://strapi.io/)
 
 ## Getting Started
 
