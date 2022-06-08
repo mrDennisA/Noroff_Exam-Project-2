@@ -1,11 +1,10 @@
 # Your project title
-
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![vokehair](https://user-images.githubusercontent.com/3404304/172705314-b3d7943e-1741-42d2-8043-447972c43f66.jpg)
 
 Voke Hair website.
 
 ## Description
-
+Project Exam 2: Making a website for a real world client. React for front-ned, Strapi for back-end.
 Voke Hair is an information website for Voke Hair brand products and new launches. It is not an e-com site, all their products are sold through retail.
 
 ## Built With
